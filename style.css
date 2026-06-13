@@ -645,7 +645,7 @@
 
   /* -------- HERO -------- */
   .hero{position:relative;width:100%;min-height:100svh;min-height:100svh;background:#080b10;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default}
-  .hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;min-width:100%;min-height:100%;object-fit:cover !important;object-position:center center;z-index:0;pointer-events:none}
   .hero-overlay-base{position:absolute;inset:0;z-index:1;background:rgba(8,11,16,0.55);pointer-events:none}
   .hero-overlay-focus{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 55% at 50% 48%,rgba(8,11,16,0.75) 0%,rgba(8,11,16,0.45) 55%,rgba(8,11,16,0.2) 100%);pointer-events:none}
   .hero-content{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 40px;box-sizing:border-box}
@@ -889,9 +889,9 @@
     .nav .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:28px;height:28px;cursor:pointer;background:transparent;border:none}
     .nav .hamburger span{display:block;width:22px;height:1px;background:var(--gold);margin:0 auto}
 
-    .hero{height:100dvh;min-height:100svh;overflow:hidden;padding:0}
-    .hero-video{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
-    .hero-content{padding:20px 20px 60px;box-sizing:border-box}
+    .hero{position:relative;height:100svh;min-height:100svh;overflow:hidden;padding:0}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;min-width:100%;min-height:100%;object-fit:cover !important;object-position:center center;z-index:0;pointer-events:none}
+  .hero-content{padding:20px 20px 60px;box-sizing:border-box}
     .hero .crosshair{display:none}
     .hero h1{font-size:48px;line-height:.95}
     .hero-title{font-size:clamp(52px,15vw,80px);white-space:nowrap;letter-spacing:-0.02em}
