@@ -1,0 +1,14 @@
+{
+  "id": "session-1781269072876",
+  "startedAt": "2026-06-12T12:57:52.876Z",
+  "cwd": "/Users/vladyslav/Desktop/WEB/taste-skill-main/the-bar/assets/images/SLUZBY",
+  "context": {},
+  "metrics": {
+    "edits": 28,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-06-12T19:43:03.709Z",
+  "duration": 24310834
+}

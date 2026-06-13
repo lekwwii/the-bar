@@ -1,0 +1,14 @@
+{
+  "id": "session-1781198851074",
+  "startedAt": "2026-06-11T17:27:31.074Z",
+  "cwd": "/Users/vladyslav/Desktop/WEB/taste-skill-main/the-bar",
+  "context": {},
+  "metrics": {
+    "edits": 61,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-06-11T19:41:25.941Z",
+  "duration": 8034868
+}

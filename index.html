@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="cs"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THE BAR. — Koktejlový catering a mobilní bar | Praha</title>
+<meta name="description" content="Prémiový koktejlový catering a mobilní bar pro svatby, firemní akce a soukromé oslavy v Praze a celé ČR. Autorské koktejly, tým v black-tie. Nezávazná poptávka.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#080b10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="THE BAR.">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://thebarcatering.cz/">
+<meta property="og:title" content="THE BAR. — Koktejlový catering a mobilní bar | Praha">
+<meta property="og:description" content="Prémiový koktejlový catering a mobilní bar pro svatby, firemní akce a soukromé oslavy v Praze a celé ČR. Autorské koktejly, tým v black-tie. Nezávazná poptávka.">
+<meta property="og:image" content="https://thebarcatering.cz/assets/images/SLUZBY/BAR%20MAIN%20WHITE.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="THE BAR. — Koktejlový catering a mobilní bar | Praha">
+<meta name="twitter:description" content="Prémiový koktejlový catering a mobilní bar pro svatby, firemní akce a soukromé oslavy v Praze a celé ČR. Autorské koktejly, tým v black-tie. Nezávazná poptávka.">
+<meta name="twitter:image" content="https://thebarcatering.cz/assets/images/SLUZBY/BAR%20MAIN%20WHITE.jpg">
+<!-- hreflang: single-page site serves CZ/EN via JS — separate language URLs required for hreflang implementation -->
+<link rel="canonical" href="https://thebarcatering.cz/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="dns-prefetch" href="https://script.google.com">
+<link rel="preload" as="image" href="assets/video/hero-poster.jpg" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/39b6aa6e-d81d-483c-8eed-6ac0f09dd3b1.woff2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"THE BAR. — Premium Cocktail Catering & Mobile Bar","description":"Prémiový koktejlový catering a mobilní bar pro svatby, firemní akce a soukromé oslavy v Praze a celé ČR. Autorské koktejly, tým v black-tie.","email":"thebar.event@gmail.com","url":"https://thebarcatering.cz/","image":"https://thebarcatering.cz/assets/images/SLUZBY/BAR%20MAIN%20WHITE.jpg","areaServed":["Praha","Česká republika"],"founder":{"@type":"Person","name":"Vladyslav Breslavskyi"},"priceRange":"$$","sameAs":["https://www.instagram.com/thebar.catering/","https://www.facebook.com/share/14eMGkatPaf/","https://www.tiktok.com/@thebar.catering"],"knowsLanguage":["cs","en"],"serviceType":"Koktejlový catering, mobilní bar"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=28">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#" class="brand">
+    <img class="b-icon" src="assets/images/LOGO BAR.png" alt="THE BAR." width="24" height="28" decoding="async">
+    <span class="divider"></span>
+    <span class="wordmark">THE BAR<span class="dot">.</span></span>
+  </a>
+  <ul>
+    <li><a href="#about" onclick="event.preventDefault();scrollToAbout()" data-i18n="nav.about">O nás</a></li>
+    <li><a href="#services" onclick="event.preventDefault();scrollToWizard()" data-i18n="nav.cenaNaMiru">Cena na míru</a></li>
+    <li><a href="#koktejly" data-i18n="nav.koktejly">Koktejly</a></li>
+    <li><a href="#addons" data-i18n="nav.sluzby">Služby &amp; Doplňky</a></li>
+    <li><a href="#contact" onclick="event.preventDefault();scrollToKontakt()" data-i18n="nav.kontakt">Kontakt</a></li>
+  </ul>
+  <div class="cta">
+    <span class="lang"><button type="button" id="lang-cz" class="lang-active" onclick="applyLanguage('cs')" aria-label="Přepnout na češtinu" aria-current="true">CZ</button><button type="button" id="lang-en" onclick="applyLanguage('en')" aria-label="Switch to English" aria-current="false">EN</button></span>
+    <a href="#contact" class="book" onclick="event.preventDefault();scrollToKontakt()" data-i18n="nav.rezervace">Rezervace</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay">
+  <button class="mobile-overlay__close" id="mobileClose" aria-label="Close menu">&times;</button>
+  <nav class="mobile-overlay__nav">
+    <a href="#about" class="mobile-overlay__link" onclick="event.preventDefault();scrollToAbout()" data-i18n="nav.about">O nás</a>
+    <a href="#services" class="mobile-overlay__link" onclick="event.preventDefault();scrollToWizard()" data-i18n="nav.cenaNaMiru">Cena na míru</a>
+    <a href="#addons" class="mobile-overlay__link" data-i18n="nav.sluzby">Služby &amp; Doplňky</a>
+    <a href="#koktejly" class="mobile-overlay__link" data-i18n="nav.koktejly">Koktejly</a>
+    <a href="#contact" class="mobile-overlay__link mobile-overlay__link--cta" data-i18n="nav.rezervace">Rezervace</a>
+  </nav>
+</div>
+<main>
+<!-- HERO -->
+<section class="hero hero-loaded" aria-label="Hero">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="none" poster="assets/video/hero-poster.jpg">
+    <!-- sources injected by inline script below -->
+  </video>
+  <script>
+  (function(){
+    var v = document.getElementById('heroVideo');
+    if (!v) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      return;
+    }
+    var pfx = window.innerWidth < 768 ? 'hero-mobile' : 'hero-desktop';
+    var base = 'assets/video/';
+    [['video/webm', pfx + '.webm'], ['video/mp4', pfx + '.mp4']].forEach(function(s) {
+      var src = document.createElement('source');
+      src.type = s[0]; src.src = base + s[1];
+      v.appendChild(src);
+    });
+    v.load();
+  })();
+  </script>
+  <div class="hero-overlay-base"></div>
+  <div class="hero-overlay-focus"></div>
+
+  <div class="hero-content">
+    <div class="hero-pre" data-i18n="hero.pre">Premium Cocktail Catering · Praha</div>
+    <h1 class="hero-title">THE BAR<span class="hero-dot">.</span></h1>
+    <div class="hero-divider"></div>
+    <div class="hero-sub" data-i18n="hero.sub">Autorské koktejly pro výjimečné okamžiky</div>
+    <div class="hero-cta">
+      <button class="hero-btn" onclick="scrollToKontakt()"><span data-i18n="hero.btnRezervovat">Rezervovat akci</span></button>
+      <button class="hero-btn-ghost" onclick="scrollToWizard()" data-i18n="hero.btnNaseSluzby">Naše služby</button>
+    </div>
+  </div>
+
+  <div class="hero-scroll-indicator">
+    <div class="hero-scroll-line"></div>
+    <div class="hero-scroll-label">Scroll</div>
+  </div>
+</section>
+
+<section id="about" class="cinematic-section">
+  <div class="cinematic-sticky">
+    <div class="cinematic-grain"></div>
+
+    <div id="cin-intro">
+      <div class="cin-intro-eyebrow" data-i18n="about.eyebrow">O nás</div>
+      <div class="cin-intro-divider"></div>
+      <p class="cin-intro-headline" data-i18n-html="about.introHeadline">Každý večer si zaslouží <em>svůj příběh.</em></p>
+      <div class="cin-intro-scroll">
+        <div class="cin-intro-scroll-line"></div>
+        <div class="cin-intro-scroll-label">Scroll</div>
+      </div>
+    </div>
+
+    <div class="cin-phrase" id="cin-p1">
+      <span class="word" data-i18n="about.phrase1a">Neprodáváme</span> <em class="word" style="color:#C8A96A;font-style:italic;" data-i18n="about.phrase1b">koktejly.</em>
+    </div>
+    <div class="cin-phrase" id="cin-p2">
+      <span class="word" data-i18n="about.phrase2a">Prodáváme</span> <em class="word" style="color:#C8A96A;font-style:italic;" data-i18n="about.phrase2b">zážitek.</em>
+    </div>
+    <div class="cin-phrase" id="cin-p3">
+      <span class="word" data-i18n="about.phrase3a">Každý</span> <em class="word" style="color:#C8A96A;font-style:italic;" data-i18n="about.phrase3b">detail</em> <span class="word" data-i18n="about.phrase3c">mluví za</span> <em class="word" style="color:#C8A96A;font-style:italic;" data-i18n="about.phrase3d">vás.</em>
+    </div>
+
+    <div class="cin-reveal" id="cin-reveal">
+      <canvas class="cin-sparks" id="cinSparks"></canvas>
+      <div class="cin-center">
+        <p class="cin-headline"><span class="cin-headline-light" data-i18n="about.revealA">Přivezeme bar.</span> <em class="cin-headline-gold" data-i18n="about.revealB">Vy si užijete večer.</em></p>
+        <div class="cin-stats">
+          <div class="cin-stat">
+            <div class="cin-stat-label" data-i18n="about.stat1Label">Tým v black-tie</div>
+            <div class="cin-stat-sub" data-i18n="about.stat1Sub">Profesionálové</div>
+          </div>
+          <div class="cin-stat-divider"></div>
+          <div class="cin-stat">
+            <div class="cin-stat-label" data-i18n="about.stat2Label">20 signature koktejlů</div>
+            <div class="cin-stat-sub" data-i18n="about.stat2Sub">Autorské recepty</div>
+          </div>
+          <div class="cin-stat-divider"></div>
+          <div class="cin-stat">
+            <div class="cin-stat-label" data-i18n="about.stat3Label">Praha &amp; celá ČR</div>
+            <div class="cin-stat-sub" data-i18n="about.stat3Sub">Doručíme k vám</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="koktejly" style="background:#080b10;padding:32px 0 0;margin-top:0;margin-bottom:0;">
+  <style>
+    @media(max-width:768px){
+      .ck3-grid{grid-template-columns:1fr!important;}
+      .ck3-bottom{grid-template-columns:1fr!important;}
+      .ck3-lpn-inner{flex-direction:column!important;}
+      .ck3-lpn-img{width:100%!important;min-height:220px;}
+    }
+
+    #koktejly{scroll-margin-top:90px;}
+    .ck3-grid{position:relative;}
+
+    .addons-eyebrow-simple {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: rgba(200,169,106,0.6);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .addons-title-simple {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 2.6vw, 34px);
+      font-weight: 300;
+      font-style: normal;
+      color: #f5f0e8;
+      line-height: 1.15;
+      margin: 0 0 48px;
+    }
+
+    .addons-title-simple em {
+      color: #C8A96A;
+      font-style: italic;
+    }
+
+    section.addons-block {
+      background: #080b10;
+      padding-top: 96px;
+      padding-bottom: 0;
+    }
+
+    .bento-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      align-items: stretch;
+      min-height: calc(100vh - 96px);
+      min-height: calc(100dvh - 96px);
+      width: calc(100% + 160px);
+      margin: 0 -80px;
+      background: #080b10;
+    }
+
+    .bento-banner-left {
+      padding: 48px 48px 48px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .bento-banner-right {
+      position: relative;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.12) 4%, rgba(0,0,0,0.5) 11%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 26%);
+      mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.12) 4%, rgba(0,0,0,0.5) 11%, rgba(0,0,0,0.85) 18%, rgba(0,0,0,1) 26%);
+    }
+
+    .bento-banner-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .bento-banner-right .bento-card {
+      position: absolute;
+      inset: 0;
+      min-height: unset;
+      background: #080b10;
+      overflow: hidden;
+    }
+
+    .bento-banner-right .bento-carousel-dots {
+      bottom: 20px;
+    }
+
+    @keyframes kenBurnsInBanner {
+      from { transform: scale(0.92); }
+      to   { transform: scale(0.95); }
+    }
+
+    .bento-banner-right .bento-card-slide img {
+      transform: scale(0.92);
+    }
+
+    .bento-banner-right .bento-card-slide.active img {
+      animation: kenBurnsInBanner 4.8s ease-in-out forwards;
+    }
+
+    .bento-banner-photo-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(13,17,23,0.3) 0%, rgba(13,17,23,0) 15%, rgba(13,17,23,0) 85%, rgba(13,17,23,0.3) 100%);
+      pointer-events: none;
+    }
+
+    .bento-banner-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: rgba(200,169,106,0.7);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .bento-banner-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4.2vw, 56px);
+      font-weight: 300;
+      font-style: italic;
+      color: #f5f0e8;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      max-width: 480px;
+    }
+
+    .bento-banner-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.6);
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 0;
+    }
+
+    .bento-banner-finishes {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,240,232,0.55);
+      max-width: 400px;
+      margin-top: 22px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .bento-banner-cta {
+      display: inline-block;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(200,169,106,0.9);
+      border: 0.5px solid rgba(200,169,106,0.4);
+      padding: 11px 24px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      background: transparent;
+      text-decoration: none;
+      align-self: flex-start;
+    }
+
+    .bento-banner-cta:hover {
+      background: rgba(200,169,106,0.1);
+      border-color: rgba(200,169,106,0.7);
+      color: #c9a84c;
+    }
+
+    .bento-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: #111418;
+      margin: 2px -80px 0;
+    }
+
+    .bento-card {
+      background: #0d1117;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+      min-height: 260px;
+    }
+
+    .bento-card:hover {
+      background: #0f1318;
+    }
+
+    .bento-card-carousel {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: #080b10;
+      flex-shrink: 0;
+    }
+
+    .bento-card-carousel-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes kenBurnsIn {
+      from { transform: scale(1.0); }
+      to   { transform: scale(1.03); }
+    }
+
+    .bento-card-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      overflow: hidden;
+      background: #0a0d14;
+      transition: opacity 0.8s ease;
+    }
+
+    .bento-card-slide.active {
+      opacity: 1;
+    }
+
+    .bento-card-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      transform-origin: center center;
+    }
+
+    .bento-card-slide.active img {
+      animation: kenBurnsIn 4.8s ease-in-out forwards;
+      will-change: transform;
+    }
+
+    .bento-carousel-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      z-index: 2;
+    }
+
+    .bento-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(245,240,232,0.25);
+      cursor: pointer;
+      transform: scale(1);
+      transition: transform 0.3s ease, background 0.3s ease;
+      padding: 8px;
+      margin: -8px;
+      background-clip: content-box;
+      box-sizing: content-box;
+      flex-shrink: 0;
+      will-change: transform;
+    }
+
+    .bento-dot.active {
+      transform: scale(1.43);
+      background: #C8A96A;
+      background-clip: content-box;
+    }
+
+    .bento-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(8,11,16,0.6);
+      border: 0.5px solid rgba(200,169,106,0.2);
+      color: rgba(200,169,106,0.7);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 10px;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .bento-card:hover .bento-carousel-btn {
+      opacity: 1;
+    }
+
+    .bento-carousel-btn.prev { left: 8px; }
+    .bento-carousel-btn.next { right: 8px; }
+
+    .bento-card-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .bento-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 300;
+      font-style: italic;
+      color: #f5f0e8;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .bento-card-desc {
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(245,240,232,0.35);
+      line-height: 1.7;
+    }
+
+    .bento-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+    }
+
+    .bento-card-price {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(200,169,106,0.75);
+      font-weight: 300;
+    }
+
+    .bento-card-num {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: rgba(200,169,106,0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .bento-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .bento-banner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        width: calc(100% + 40px);
+        margin: 0 -20px;
+      }
+      .bento-banner-left {
+        padding: 40px 24px 36px 24px;
+      }
+      .bento-banner-right {
+        height: 280px;
+        -webkit-mask-image: none;
+        mask-image: none;
+      }
+      .bento-services-grid {
+        grid-template-columns: 1fr;
+        margin: 2px -20px 0;
+      }
+      .addons-title-simple {
+        margin: 0 0 32px;
+      }
+      .bento-card-carousel {
+        aspect-ratio: 3/2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .bento-banner-right {
+        height: 240px;
+      }
+      .bento-card-carousel {
+        aspect-ratio: 4/3;
+      }
+    }
+  </style>
+
+  <div style="padding:0 48px 0;">
+    <div style="font-size:9px;font-weight:300;letter-spacing:0.25em;color:rgba(200,169,106,0.6);text-transform:uppercase;margin-bottom:14px;">Signature cocktails</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-weight:200;font-size:48px;color:#f5f0e8;" data-i18n-html="cocktails.headline">Naše <em style="color:#C8A96A;font-style:italic;">signature</em> koktejly</div>
+  </div>
+
+  <div class="ck3-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.06);">
+    <div style="position:absolute;top:0;left:0;right:0;height:90px;background:linear-gradient(180deg,#080b10 0%,rgba(8,11,16,0.6) 45%,rgba(8,11,16,0) 100%);z-index:50;pointer-events:none;"></div>
+
+    <!-- Card 1 - Lana's Kiss (spans 2 rows) -->
+    <div style="background:#080b10;grid-column:1;grid-row:1/3;display:flex;flex-direction:column;">
+      <div class="kokt-img-wrap" style="order:1;flex:1;min-height:340px;overflow:hidden;background:linear-gradient(to bottom,transparent 60%,#080b10 100%),radial-gradient(ellipse at 50% 60%,rgba(130,15,25,0.75) 0%,rgba(5,0,5,1) 65%);display:flex;align-items:center;justify-content:center;animation-duration:4s;">
+        <img src="assets/images/foto%20web%20novy%202/LANA%20s%20KISS.webp" alt="Koktejl Lana's Kiss — vodka, cranberry, rose, citron" loading="lazy" decoding="async" style="height:95%;width:auto;max-width:92%;object-fit:contain;object-position:center center;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="order:2;padding:24px 32px;background:#080b10;flex-shrink:0;">
+        <div style="font-size:9px;letter-spacing:0.15em;color:rgba(200,169,106,0.4);margin-bottom:8px;">01</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:32px;color:#f5f0e8;margin-bottom:10px;transition:color 0.3s;cursor:default;" onmouseover="this.style.color='#C8A96A'" onmouseout="this.style.color='#f5f0e8'">Lana's Kiss</div>
+        <div style="width:24px;height:0.5px;background:rgba(200,169,106,0.3);margin-bottom:10px;"></div>
+        <div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.5);letter-spacing:0.05em;line-height:1.8;">vodka · cranberry · rose · lemon</div>
+      </div>
+    </div>
+
+    <!-- Card 2 - Galaxy -->
+    <div style="background:#080b10;display:flex;flex-direction:column;">
+      <div class="kokt-img-wrap" style="height:220px;overflow:hidden;background:linear-gradient(to bottom,transparent 60%,#080b10 100%),radial-gradient(ellipse at 50% 60%,rgba(65,10,100,0.8) 0%,rgba(0,0,8,1) 65%);display:flex;align-items:center;justify-content:center;animation-duration:5s;">
+        <img src="assets/images/foto%20web%20novy%202/GALAXY.webp" alt="Koktejl Galaxy — vodka, broskev, marakuja, lychee" loading="lazy" decoding="async" style="height:95%;width:auto;max-width:92%;object-fit:contain;object-position:center center;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <div style="font-size:9px;letter-spacing:0.15em;color:rgba(200,169,106,0.4);margin-bottom:6px;">02</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#f5f0e8;margin-bottom:8px;">Galaxy</div>
+        <div style="width:20px;height:0.5px;background:rgba(200,169,106,0.3);margin-bottom:8px;"></div>
+        <div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.5);letter-spacing:0.05em;line-height:1.8;">vodka · peach · passion fruit · lychee · lemon</div>
+      </div>
+    </div>
+
+    <!-- Card 3 - Cloud -->
+    <div style="background:#080b10;display:flex;flex-direction:column;">
+      <div class="kokt-img-wrap" style="height:220px;overflow:hidden;background:linear-gradient(to bottom,transparent 60%,#080b10 100%),radial-gradient(ellipse at 50% 60%,rgba(15,25,80,0.75) 0%,rgba(0,0,8,1) 65%);display:flex;align-items:center;justify-content:center;animation-duration:3.5s;">
+        <img src="assets/images/foto%20web%20novy%202/CLOUD.webp" alt="Koktejl Cloud — gin, marakuja, vaječný bílek, skořice" loading="lazy" decoding="async" style="height:95%;width:auto;max-width:92%;object-fit:contain;object-position:center center;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <div style="font-size:9px;letter-spacing:0.15em;color:rgba(200,169,106,0.4);margin-bottom:6px;">03</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#f5f0e8;margin-bottom:8px;">Cloud</div>
+        <div style="width:20px;height:0.5px;background:rgba(200,169,106,0.3);margin-bottom:8px;"></div>
+        <div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.5);letter-spacing:0.05em;line-height:1.8;">gin · passion fruit · egg white · cinnamon · lemon</div>
+      </div>
+    </div>
+
+    <!-- Card 4 - Tropics -->
+    <div style="background:#080b10;display:flex;flex-direction:column;">
+      <div class="kokt-img-wrap" style="height:220px;overflow:hidden;background:linear-gradient(to bottom,transparent 60%,#080b10 100%),radial-gradient(ellipse at 50% 60%,rgba(10,55,30,0.75) 0%,rgba(0,5,0,1) 65%);display:flex;align-items:center;justify-content:center;animation-duration:4.5s;">
+        <img src="assets/images/foto%20web%20novy%202/TROPICS.webp" alt="Koktejl Tropics — gin, marakuja, citron, sprite" loading="lazy" decoding="async" style="height:95%;width:auto;max-width:92%;object-fit:contain;object-position:center center;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <div style="font-size:9px;letter-spacing:0.15em;color:rgba(200,169,106,0.4);margin-bottom:6px;">04</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#f5f0e8;margin-bottom:8px;">Tropics</div>
+        <div style="width:20px;height:0.5px;background:rgba(200,169,106,0.3);margin-bottom:8px;"></div>
+        <div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.5);letter-spacing:0.05em;line-height:1.8;">gin · passion fruit · lemon · sprite</div>
+      </div>
+    </div>
+
+    <!-- Card 5 - Vice & Ice -->
+    <div style="background:#080b10;display:flex;flex-direction:column;">
+      <div class="kokt-img-wrap" style="height:220px;overflow:hidden;background: linear-gradient(to bottom, transparent 60%, #080b10 100%), radial-gradient(ellipse at 50% 60%, rgba(110, 12, 45, 0.75) 0%, rgba(8, 0, 5, 1) 65%);display:flex;align-items:center;justify-content:center;">
+        <img src="assets/images/foto%20web%20novy%202/VICE%20%26%20ICE.webp" alt="Koktejl Vice & Ice — passoa, vanilka, citron, prosecco" loading="lazy" decoding="async" style="height:95%;width:auto;max-width:92%;object-fit:contain;object-position:center center;display:block;transition:transform 0.6s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <div style="font-size:9px;letter-spacing:0.15em;color:rgba(200,169,106,0.4);margin-bottom:6px;">05</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#f5f0e8;margin-bottom:8px;">Vice &amp; Ice</div>
+        <div style="width:20px;height:0.5px;background:rgba(200,169,106,0.3);margin-bottom:8px;"></div>
+        <div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.5);letter-spacing:0.05em;line-height:1.8;">passoa · vanilla · lemon · prosecco · soda</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cocktail-bottom-row">
+    <!-- LEFT: La Prima Notte -->
+    <div class="bottom-left-card">
+      <div class="bottom-img-zone" style="background: linear-gradient(to bottom, transparent 60%, #080b10 100%), radial-gradient(ellipse at 50% 60%, rgba(200, 140, 60, 0.45) 0%, rgba(8, 5, 0, 1) 65%) !important;">
+        <img src="assets/images/foto%20web%20novy%202/LA%20PRIMA%20NOTTE.webp" alt="La Prima Notte" class="bottom-cocktail-img" loading="lazy" decoding="async">
+      </div>
+      <div class="bottom-card-text">
+        <div class="bottom-card-num">06</div>
+        <div class="bottom-card-name">La Prima Notte</div>
+        <div class="bottom-card-divider"></div>
+        <div class="bottom-card-ingr">tequila · agave · lychee · lemon</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Signature panel -->
+    <div class="bottom-right-panel">
+      <div class="bottom-panel-inner">
+        <div class="bottom-stat">
+          <div class="bottom-stat-number">15<em>+</em></div>
+          <div class="bottom-stat-label" data-i18n="cocktails.statLabel">autorských koktejlů</div>
+        </div>
+        <div class="bottom-panel-vline"></div>
+        <div class="bottom-panel-text">
+          <div class="bottom-panel-eyebrow" data-i18n="cocktails.panelEyebrow">Signature menu</div>
+          <div class="bottom-panel-headline" data-i18n-html="cocktails.panelHeadline">Každý koktejl je<br><i>příběh</i> pro váš večer</div>
+          <button class="btn-sestavit-bottom" onclick="scrollToWizard()" data-i18n="cocktails.panelBtn">Sestavit svůj bar →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block addons-block" id="addons">
+  <div class="bento-banner">
+    <div class="bento-banner-left">
+      <div class="addons-eyebrow-simple" data-i18n="addons.eyebrow">SLUŽBY &amp; DOPLŇKY</div>
+      <h2 class="addons-title-simple" data-i18n-html="addons.title">Zážitky, které <em>mluví za vás.</em></h2>
+      <div class="bento-banner-eyebrow" data-i18n="addons.bannerEyebrow">Naše hlavní služba</div>
+      <div class="bento-banner-title" data-i18n="addons.bannerTitle">Mobilní bar pro váš večer.</div>
+      <div class="bento-banner-desc" data-i18n="addons.bannerDesc">Bílý, černý, nebo přírodní dřevo — vyberte si bar, který sedne vašemu večeru. Přivezeme kompletní mobilní bar kamkoliv a postaráme se o každý detail. Vy určíte styl, zbytek necháte na nás.</div>
+      <div class="bento-banner-finishes" data-i18n-html="addons.bannerFinishes">Bílá <span style="color:#C8A96A">·</span> Černá <span style="color:#C8A96A">·</span> Přírodní dřevo</div>
+      <a class="bento-banner-cta" onclick="scrollToKontakt()" data-i18n="addons.bannerCta">Nezávazná poptávka</a>
+    </div>
+    <div class="bento-banner-right">
+      <div class="bento-card">
+        <div class="bento-card-slide active">
+          <img src="assets/images/SLUZBY/BAR%20MAIN%20WHITE.webp" alt="Mobilní bar – bílé provedení" loading="lazy" decoding="async">
+        </div>
+        <div class="bento-card-slide">
+          <img src="assets/images/SLUZBY/BAR%20MAIN%20BLACK.webp" alt="Mobilní bar – černé provedení" loading="lazy" decoding="async">
+        </div>
+        <div class="bento-card-slide">
+          <img src="assets/images/SLUZBY/BAR%20MAIN%20ORIGINAL.webp" alt="Mobilní bar – dřevěné provedení" loading="lazy" decoding="async">
+        </div>
+        <div class="bento-banner-photo-fade"></div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bento-services-grid">
+
+    <div class="bento-card" data-carousel="0">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/pyramida1.jpeg" alt="Prosecco pyramida ze sklenic s efektem studené fontány" loading="lazy" decoding="async" style="object-position:center 30%;"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/pyramida2.webp" alt="Prosecco pyramida — detail sklenic" loading="lazy" decoding="async" style="object-position:center 30%;"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/pyramida3.webp" alt="Prosecco pyramida na firemní akci" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card1.name">Prosecco Pyramida</div>
+          <div class="bento-card-desc" data-i18n="addons.card1.desc">Elegantní pyramida ze sklenic s efektem studené fontány + 10 lahví prosecco.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">5 000 Kč</div>
+          <div class="bento-card-num">01</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="1">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/wz1.webp" alt="Welcome zóna — ledový blok s květinou uvnitř" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/wz2.webp" alt="Welcome zóna — přivítání hostů proseccem" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/wz3.webp" alt="Welcome zóna — detail dekorace" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card2.name">Welcome zóna</div>
+          <div class="bento-card-desc" data-i18n="addons.card2.desc">Ledový blok s květinou uvnitř + 5 lahví prosecco na uvítanou hostům.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">7 000 Kč</div>
+          <div class="bento-card-num">02</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="2">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/mc1.webp" alt="Cocktail MasterClass — barman vyučuje hosty" loading="lazy" decoding="async" style="object-position:center 20%;"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/mc2.webp" alt="Cocktail MasterClass — výuka míchání koktejlů" loading="lazy" decoding="async" style="object-position:center 25%;"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/mc3.webp" alt="Cocktail MasterClass — příprava autorských drinků" loading="lazy" decoding="async" style="object-position:center 25%;"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card3.name">Cocktail MasterClass</div>
+          <div class="bento-card-desc" data-i18n="addons.card3.desc">Namíchejte si vlastní koktejly pod vedením profesionálního barmana.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">od 2 000 Kč / os.</div>
+          <div class="bento-card-num">03</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="3">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/printp1.webp" alt="Print Pen — tisk loga přímo na pěně koktejlu" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/printp2.webp" alt="Print Pen — personalizace drinku vlastním textem" loading="lazy" decoding="async" style="object-position:center 35%;"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/printp3.webp" alt="Print Pen — výsledný koktejl s potiskem" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card4.name">Print Pen</div>
+          <div class="bento-card-desc" data-i18n="addons.card4.desc">Personalizujte koktejly vlastním logem nebo textem přímo na pěně.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">500 Kč</div>
+          <div class="bento-card-num">04</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="4">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/flavourb1.webp" alt="Flavour Blaster — aromatická kouřová bublina na koktejlu" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/flavourb2.webp" alt="Flavour Blaster — efekt kouřové bubliny na baru" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/flavourb3.webp" alt="Flavour Blaster — smyslový zážitek z koktejlu" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card5.name">Flavour Blaster</div>
+          <div class="bento-card-desc" data-i18n="addons.card5.desc">Proměňte koktejl v jedinečný smyslový zážitek — aromatická kouřová bublina.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">500 Kč</div>
+          <div class="bento-card-num">05</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="5">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/suchyl1.webp" alt="Suchý led — efekt plazivé mlhy na baru" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/suchyl2.webp" alt="Suchý led — drinky s efektem mlhy ze suchého ledu" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/suchyl3.webp" alt="Suchý led — show suchého ledu na akci" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card6.name">Suchý led</div>
+          <div class="bento-card-desc" data-i18n="addons.card6.desc">Efekt plazivé mlhy pomocí suchého ledu — drinky jako z jiného světa.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">od 800 Kč</div>
+          <div class="bento-card-num">06</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="6">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/studenaf1.webp" alt="Studená fontána — světelná show na svatbě" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/studenaf2.webp" alt="Studená fontána — efektní světelný moment na akci" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/studenaf3.webp" alt="Studená fontána — dechberoucí efekt studené fontány" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card7.name">Studená fontána</div>
+          <div class="bento-card-desc" data-i18n="addons.card7.desc">Dechberoucí světelná show, která zvýrazní váš velký okamžik.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">300 Kč / ks</div>
+          <div class="bento-card-num">07</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bento-card" data-carousel="7">
+      <div class="bento-card-carousel">
+        <div class="bento-card-carousel-inner">
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/koktejlp1.webp" alt="Koktejlová pyramida — vizuální WOW efekt pro hosty" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/koktejlp2.webp" alt="Koktejlová pyramida — detail koktejlů v pyramidě" loading="lazy" decoding="async"></div>
+          <div class="bento-card-slide"><img src="assets/images/SLUZBY/koktejlp3.webp" alt="Koktejlová pyramida — efektní pyramida na párty" loading="lazy" decoding="async"></div>
+        </div>
+        <button class="bento-carousel-btn prev" onclick="carouselPrev(this)">‹</button>
+        <button class="bento-carousel-btn next" onclick="carouselNext(this)">›</button>
+        <div class="bento-carousel-dots">
+          <div class="bento-dot active"></div>
+          <div class="bento-dot"></div>
+          <div class="bento-dot"></div>
+        </div>
+      </div>
+      <div class="bento-card-body">
+        <div>
+          <div class="bento-card-name" data-i18n="addons.card8.name">Koktejlová pyramida</div>
+          <div class="bento-card-desc" data-i18n="addons.card8.desc">Efektní pyramida plná koktejlů — vizuální WOW efekt pro vaše hosty.</div>
+        </div>
+        <div class="bento-card-footer">
+          <div class="bento-card-price">na dotaz</div>
+          <div class="bento-card-num">08</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="partners">
+  <div class="section-label">
+    <span class="section-label__line"></span>
+    <span class="section-label__text" data-i18n="partners.label">DŮVĚŘUJÍ NÁM</span>
+    <span class="section-label__line"></span>
+  </div>
+  <h2 data-i18n="partners.heading">Značky, které nám důvěřují</h2>
+  <p class="subtitle" data-i18n="partners.sub">Hrdě spolupracujeme s předními českými a mezinárodními značkami.</p>
+  <div class="partnewrapper">
+    <div class="partners-track">
+      <div class="partners-set">
+        <img src="assets/images/APTOS LOGO.svg" alt="Aptos">
+        <img src="assets/images/LOGO WARNER.svg" alt="Warner">
+        <img src="assets/images/ZO SKIN LOGO.webp" alt="ZO Skin Health">
+        <img src="assets/images/SVATEBNIEXPO LOGO.png" alt="Svatební Expo">
+        <img src="assets/images/ELCBRANDS LOGO.svg" alt="ELC Brands">
+      </div>
+      <div class="partners-set" aria-hidden="true">
+        <img src="assets/images/APTOS LOGO.svg" alt="">
+        <img src="assets/images/LOGO WARNER.svg" alt="">
+        <img src="assets/images/ZO SKIN LOGO.webp" alt="">
+        <img src="assets/images/SVATEBNIEXPO LOGO.png" alt="">
+        <img src="assets/images/ELCBRANDS LOGO.svg" alt="">
+      </div>
+      <div class="partners-set" aria-hidden="true">
+        <img src="assets/images/APTOS LOGO.svg" alt="">
+        <img src="assets/images/LOGO WARNER.svg" alt="">
+        <img src="assets/images/ZO SKIN LOGO.webp" alt="">
+        <img src="assets/images/SVATEBNIEXPO LOGO.png" alt="">
+        <img src="assets/images/ELCBRANDS LOGO.svg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block" id="contact" style="background:#080b10;padding:0;margin-top:0;">
+
+<div style="max-width:1100px;margin:0 auto;padding:32px 48px 40px;box-sizing:border-box;">
+
+  <div style="text-align:center;margin-bottom:48px;">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:200;font-size:clamp(30px,8.5vw,58px);color:#f5f0e8;line-height:1.1;letter-spacing:0.01em;margin:0;overflow-wrap:break-word;word-break:break-word;" data-i18n-html="contact.headline">Udělejme z vaší akce<br><em style="color:#C8A96A;font-style:italic;">nezapomenutelný</em> večer.</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:17px;color:rgba(245,240,232,0.5);margin-top:20px;margin-bottom:0;" data-i18n="contact.sub">Napište nám nebo rovnou sestavte svou poptávku.</p>
+  </div>
+
+  <div class="cta-cols-grid" style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;align-items:start;">
+
+    <div class="cta-col-left" style="padding-right:56px;">
+      <div style="font-size:9px;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.22em;color:rgba(200,169,106,0.55);text-transform:uppercase;margin-bottom:28px;" data-i18n="contact.formLabel">Napište nám</div>
+
+      <div id="contact-form-wrap" style="border:0.5px solid rgba(255,255,255,0.08);transition:border-color 0.3s;">
+        <input id="cf-name" type="text" placeholder="Vaše jméno" data-i18n-placeholder="contact.fieldName" style="display:block;width:100%;background:rgba(255,255,255,0.02);border:none;border-bottom:0.5px solid rgba(255,255,255,0.06);color:#f5f0e8;font-family:'Inter',sans-serif;font-weight:300;font-size:13px;padding:18px 20px;outline:none;box-sizing:border-box;transition:background 0.2s;" onfocus="this.style.background='rgba(200,169,106,0.03)'" onblur="this.style.background='rgba(255,255,255,0.02)'">
+        <input id="cf-email" type="email" placeholder="vas@email.cz" style="display:block;width:100%;background:rgba(255,255,255,0.02);border:none;border-bottom:0.5px solid rgba(255,255,255,0.06);color:#f5f0e8;font-family:'Inter',sans-serif;font-weight:300;font-size:13px;padding:18px 20px;outline:none;box-sizing:border-box;transition:background 0.2s;" onfocus="this.style.background='rgba(200,169,106,0.03)'" onblur="this.style.background='rgba(255,255,255,0.02)'">
+        <textarea id="cf-message" placeholder="Váš dotaz nebo zpráva..." data-i18n-placeholder="contact.fieldMessage" rows="5" style="display:block;width:100%;background:rgba(255,255,255,0.02);border:none;color:#f5f0e8;font-family:'Inter',sans-serif;font-weight:300;font-size:13px;padding:18px 20px;outline:none;resize:none;box-sizing:border-box;transition:background 0.2s;" onfocus="this.style.background='rgba(200,169,106,0.03)'" onblur="this.style.background='rgba(255,255,255,0.02)'"></textarea>
+      </div>
+
+      <button id="cf-submit" onclick="submitContactForm()" style="margin-top:10px;width:100%;background:transparent;border:0.5px solid rgba(200,169,106,0.3);color:rgba(200,169,106,0.75);font-family:'Inter',sans-serif;font-weight:300;font-size:9px;letter-spacing:0.22em;padding:14px 20px;cursor:pointer;text-align:center;transition:border-color 0.3s,color 0.3s,background-color 0.3s;" data-i18n="contact.submitBtn">ODESLAT ZPRÁVU →</button>
+
+      <div style="margin-top:10px;font-size:10px;font-family:'Inter',sans-serif;font-weight:300;color:rgba(245,240,232,0.38);" data-i18n-html="contact.orDirect">nebo <a href="mailto:thebar.event@gmail.com" style="color:rgba(200,169,106,0.5);text-decoration:none;">napište přímo</a></div>
+    </div>
+
+    <div class="cta-col-divider" style="background:rgba(255,255,255,0.06);align-self:stretch;"></div>
+
+    <div class="cta-col-right" style="padding-left:56px;display:flex;flex-direction:column;">
+      <button onclick="scrollToWizard()" style="width:100%;background:transparent;border:0.5px solid rgba(255,255,255,0.1);color:#f5f0e8;font-family:'Inter',sans-serif;font-weight:300;font-size:9px;letter-spacing:0.22em;padding:24px 28px;cursor:pointer;text-align:center;transition:border-color 0.3s,color 0.3s;" onmouseover="this.style.borderColor='rgba(200,169,106,0.4)';this.style.color='#C8A96A'" onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='#f5f0e8'" data-i18n="contact.wizBtn">SESTAVIT POPTÁVKU →</button>
+
+      <div style="font-size:10px;font-family:'Inter',sans-serif;font-weight:300;color:rgba(245,240,232,0.38);text-align:center;margin-top:10px;" data-i18n="contact.wizNote">Individuální kalkulace · do 2 minut</div>
+
+      <div style="margin-top:36px;padding-top:28px;border-top:0.5px solid rgba(255,255,255,0.06);display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;">
+        <div>
+          <div style="font-size:8px;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.38);text-transform:uppercase;margin-bottom:5px;" data-i18n="contact.labelEmail">Email</div>
+          <div style="font-size:11px;font-family:'Inter',sans-serif;font-weight:300;"><a href="mailto:thebar.event@gmail.com" style="color:rgba(200,169,106,0.65);text-decoration:none;">thebar.event@gmail.com</a></div>
+        </div>
+        <div>
+          <div style="font-size:8px;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.38);text-transform:uppercase;margin-bottom:5px;" data-i18n="contact.labelTelefon">Telefon</div>
+          <div style="font-size:11px;font-family:'Inter',sans-serif;font-weight:300;"><a href="tel:+420775505805" style="color:rgba(200,169,106,0.65);text-decoration:none;">+420 775 505 805</a></div>
+        </div>
+        <div>
+          <div style="font-size:8px;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.38);text-transform:uppercase;margin-bottom:5px;" data-i18n="contact.labelAdresa">Adresa</div>
+          <div style="font-size:11px;font-family:'Inter',sans-serif;font-weight:300;color:rgba(245,240,232,0.55);">Kaprova 42/12, Praha 1</div>
+        </div>
+        <div>
+          <div style="font-size:8px;font-family:'Inter',sans-serif;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.38);text-transform:uppercase;margin-bottom:5px;" data-i18n="contact.labelIco">IČO</div>
+          <div style="font-size:11px;font-family:'Inter',sans-serif;font-weight:300;color:rgba(245,240,232,0.55);">23284111</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+<section id="services" class="wiz-section">
+  <div class="wiz-bg"><div class="wiz-bg-c"></div></div>
+  <div class="wiz-inner">
+
+    <div class="wiz-head">
+      <div class="wiz-eyebrow"><div class="wiz-eyebrow-line"></div><span class="wiz-eyebrow-txt" data-i18n="wizard.eyebrow">Sestavte svůj bar</span><div class="wiz-eyebrow-line"></div></div>
+      <div class="wiz-title" data-i18n-html="wizard.title">Každá akce je <em>jedinečná.</em></div>
+      <div class="wiz-sub" data-i18n="wizard.sub">Žádné fixní balíčky — pouze váš bar, váš styl.</div>
+    </div>
+
+    <div class="wiz-steps">
+      <div class="wiz-step-dot active" id="wizDot0" onclick="wizGoTo(0)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizGoTo(0)"><div class="wiz-step-circle">01</div><div class="wiz-step-lbl" data-i18n="wizard.step1.lbl">Typ akce</div></div>
+      <div class="wiz-conn" id="wizConn0"></div>
+      <div class="wiz-step-dot" id="wizDot1" onclick="wizGoTo(1)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizGoTo(1)"><div class="wiz-step-circle">02</div><div class="wiz-step-lbl" data-i18n="wizard.step2.lbl">Hosté</div></div>
+      <div class="wiz-conn" id="wizConn1"></div>
+      <div class="wiz-step-dot" id="wizDot2" onclick="wizGoTo(2)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizGoTo(2)"><div class="wiz-step-circle">03</div><div class="wiz-step-lbl" data-i18n="wizard.step3.lbl">Délka</div></div>
+      <div class="wiz-conn" id="wizConn2"></div>
+      <div class="wiz-step-dot" id="wizDot3" onclick="wizGoTo(3)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizGoTo(3)"><div class="wiz-step-circle">04</div><div class="wiz-step-lbl" data-i18n="wizard.step4.lbl">Doplňky</div></div>
+    </div>
+
+    <div class="wiz-body">
+      <div class="wiz-panels">
+
+        <!-- Panel 1 -->
+        <div class="wiz-panel active" id="wizPanel0">
+          <div class="wiz-panel-num">01</div>
+          <div class="wiz-panel-title" data-i18n="wizard.panel1.title">Jaký typ akce plánujete?</div>
+          <div class="wiz-type-grid">
+            <div class="wiz-type-btn active" onclick="wizSetType(this,'wedding')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizSetType(this,'wedding')" aria-pressed="true">
+              <div class="wiz-type-name-big" data-i18n="wizard.panel1.type1Big">Svatba</div>
+              <div class="wiz-type-name-sub" data-i18n="wizard.panel1.type1Sub">Váš velký den</div>
+            </div>
+            <div class="wiz-type-btn" onclick="wizSetType(this,'corporate')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizSetType(this,'corporate')" aria-pressed="false">
+              <div class="wiz-type-name-big" data-i18n="wizard.panel1.type2Big">Firemní</div>
+              <div class="wiz-type-name-sub" data-i18n="wizard.panel1.type2Sub">Akce & prezentace</div>
+            </div>
+            <div class="wiz-type-btn" onclick="wizSetType(this,'party')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')wizSetType(this,'party')" aria-pressed="false">
+              <div class="wiz-type-name-big" data-i18n="wizard.panel1.type3Big">Párty</div>
+              <div class="wiz-type-name-sub" data-i18n="wizard.panel1.type3Sub">Soukromá oslava</div>
+            </div>
+          </div>
+          <div class="wiz-nav">
+            <button class="wiz-btn-next" onclick="wizGoTo(1)" data-i18n="wizard.btnNext">Pokračovat →</button>
+          </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div class="wiz-panel" id="wizPanel1">
+          <div class="wiz-panel-num">02</div>
+          <div class="wiz-panel-title" data-i18n="wizard.panel2.title">Kolik hostů očekáváte?</div>
+          <div class="wiz-slider-block">
+            <div class="wiz-slider-display">
+              <span class="wiz-slider-big" id="wizGNum">80</span>
+              <span class="wiz-slider-unit" data-i18n="wizard.panel2.unit">hostů</span>
+            </div>
+            <div class="wiz-slider-track"><div class="wiz-slider-fill" id="wizGFill" style="width:21%"></div></div>
+            <input type="range" min="10" max="350" value="80" step="1" oninput="wizUpdG(this.value)">
+            <div class="wiz-slider-range"><span>10</span><span>350+</span></div>
+          </div>
+          <div class="wiz-nav">
+            <button class="wiz-btn-back" onclick="wizGoTo(0)" data-i18n="wizard.btnBack">← Zpět</button>
+            <button class="wiz-btn-next" onclick="wizGoTo(2)" data-i18n="wizard.btnNext">Pokračovat →</button>
+          </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div class="wiz-panel" id="wizPanel2">
+          <div class="wiz-panel-num">03</div>
+          <div class="wiz-panel-title" data-i18n="wizard.panel3.title">Jak dlouho bude akce trvat?</div>
+          <div class="wiz-slider-block">
+            <div class="wiz-slider-display">
+              <span class="wiz-slider-big" id="wizHNum">4</span>
+              <span class="wiz-slider-unit" id="wizHUnit">hodiny</span>
+            </div>
+            <div class="wiz-slider-track"><div class="wiz-slider-fill" id="wizHFill" style="width:27%"></div></div>
+            <input type="range" min="1" max="12" value="4" step="1" oninput="wizUpdH(this.value)">
+            <div class="wiz-slider-range"><span data-i18n="wizard.panel3.rangeMin">1 hodina</span><span data-i18n="wizard.panel3.rangeMax">12 hodin</span></div>
+          </div>
+          <div class="wiz-nav">
+            <button class="wiz-btn-back" onclick="wizGoTo(1)" data-i18n="wizard.btnBack">← Zpět</button>
+            <button class="wiz-btn-next" onclick="wizGoTo(3)" data-i18n="wizard.btnNext">Pokračovat →</button>
+          </div>
+        </div>
+
+        <!-- Panel 4 -->
+        <div class="wiz-panel" id="wizPanel3">
+          <div class="wiz-panel-num">04</div>
+          <div class="wiz-panel-title" data-i18n="wizard.panel4.title">Chcete přidat něco navíc?</div>
+          <div class="wiz-addon-list">
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon1" data-name="Welcome zóna s ledovým blokem" data-price="7000" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon1">Welcome zóna s ledovým blokem</div></div>
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon2" data-name="Koktejlová pyramida" data-price="5000" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon2">Koktejlová pyramida</div></div>
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon3" data-name="Flavour Blaster" data-price="500" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon3">Flavour Blaster</div></div>
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon4" data-name="Print Pen" data-price="500" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon4">Print Pen</div></div>
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon5" data-name="Suchý led" data-price="800" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon5">Suchý led</div></div>
+            <div class="wiz-addon" onclick="wizTogA(this)" data-key="wizard.addon6" data-name="Studená fontána jisker" data-price="300" role="checkbox" aria-checked="false" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wizTogA(this)}"><div class="wiz-addon-dot"></div><div class="wiz-addon-name" data-i18n="wizard.addon6">Studená fontána jisker</div></div>
+          </div>
+          <div class="wiz-nav">
+            <button class="wiz-btn-back" onclick="wizGoTo(2)" data-i18n="wizard.btnBack">← Zpět</button>
+            <button class="wiz-btn-next" onclick="wizOpenModal()" data-i18n="wizard.btnOpenModal">Sestavit poptávku →</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary -->
+      <div class="wiz-summary">
+        <div class="wiz-sum-head"><div class="wiz-sum-line"></div><span class="wiz-sum-title" data-i18n="wizard.summary.title">Váš bar</span><div class="wiz-sum-line"></div></div>
+        <div class="wiz-sum-rows">
+          <div class="wiz-sum-row"><span class="wiz-sum-k" data-i18n="wizard.summary.rowType">Typ akce</span><span class="wiz-sum-v" id="wizSType">—</span></div>
+          <div class="wiz-sum-row"><span class="wiz-sum-k" data-i18n="wizard.summary.rowGuests">Hosté</span><span class="wiz-sum-v" id="wizSGuests">—</span></div>
+          <div class="wiz-sum-row"><span class="wiz-sum-k" data-i18n="wizard.summary.rowDuration">Délka</span><span class="wiz-sum-v" id="wizSHours">—</span></div>
+          <div class="wiz-sum-row"><span class="wiz-sum-k" data-i18n="wizard.summary.rowTeam">Tým</span><span class="wiz-sum-v" id="wizSTeam">—</span></div>
+          <div class="wiz-sum-row"><span class="wiz-sum-k" data-i18n="wizard.summary.rowCocktails">Koktejly</span><span class="wiz-sum-v" id="wizSCockt">—</span></div>
+        </div>
+        <div class="wiz-sum-div"></div>
+        <div class="wiz-sum-addons-lbl" data-i18n="wizard.summary.addonsLabel">Doplňky</div>
+        <div class="wiz-sum-addons" id="wizSAddons"><span class="wiz-sum-empty" data-i18n="wizard.summary.noAddons">Žádné doplňky</span></div>
+        <div class="wiz-sum-div"></div>
+        <div class="wiz-sum-total-lbl" data-i18n="wizard.summary.totalLabel">Orientační cena od</div>
+        <div class="wiz-sum-total" id="wizSTotal">—</div>
+        <div class="wiz-sum-note" data-i18n="wizard.summary.note">* Odhad koktejlů. Přesný počet probereme individuálně.</div>
+        <button class="wiz-btn-next" style="width:100%;margin-top:auto;" onclick="wizOpenModal()" data-i18n="wizard.summary.sendBtn">Odeslat poptávku →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="wiz-modal-overlay" id="wizModalOverlay" onclick="wizCloseModal(event)">
+    <div class="wiz-modal">
+      <div class="wiz-modal-close" onclick="wizCloseModal()">×</div>
+      <div class="wiz-modal-left">
+        <div class="wiz-modal-title" data-i18n="wizard.modal.titleLeft">Vaše poptávka</div>
+        <div class="wiz-modal-sub" data-i18n="wizard.modal.subLeft">Shrnutí vašeho baru</div>
+        <div class="wiz-modal-sum-rows" id="wizModalSum"></div>
+      </div>
+      <div class="wiz-modal-right">
+        <div class="wiz-modal-title" data-i18n="wizard.modal.titleRight">Kontaktní údaje</div>
+        <div class="wiz-modal-form" id="wizModalForm">
+          <div class="wiz-field">
+            <label class="wiz-label" data-i18n="wizard.modal.fieldName">Jméno a příjmení</label>
+            <input class="wiz-input" type="text" id="wizName" placeholder="Jan Novák" data-i18n-placeholder="wizard.modal.namePlaceholder">
+          </div>
+          <div class="wiz-field">
+            <label class="wiz-label" data-i18n="wizard.modal.fieldTel">Telefon</label>
+            <div class="wiz-phone-wrap">
+              <select class="wiz-country-code" id="wizCountryCode">
+                <option value="+420">🇨🇿 +420</option>
+                <option value="+421">🇸🇰 +421</option>
+                <option value="+48">🇵🇱 +48</option>
+                <option value="+380">🇺🇦 +380</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+43">🇦🇹 +43</option>
+                <option value="+44">🇬🇧 +44</option>
+              </select>
+              <input class="wiz-input wiz-phone-input" type="tel" id="wizPhone" placeholder="000 000 000" maxlength="12" oninput="this.value=this.value.replace(/[^0-9\s]/g,'')">
+            </div>
+          </div>
+          <div class="wiz-field">
+            <label class="wiz-label" data-i18n="wizard.modal.fieldEmail">E-mail</label>
+            <input class="wiz-input" type="email" id="wizEmail" placeholder="vas@email.cz">
+          </div>
+          <div class="wiz-field">
+            <label class="wiz-label" data-i18n="wizard.modal.fieldDate">Datum akce</label>
+            <div class="wiz-cal-wrap" id="wizCalWrap">
+              <input class="wiz-input wiz-cal-input" type="text" id="wizDate" placeholder="Vyberte datum" data-i18n-placeholder="wizard.modal.datePlaceholder" readonly onclick="wizToggleCal()">
+              <div class="wiz-cal-dropdown" id="wizCalDropdown">
+                <div class="wiz-cal-header">
+                  <button class="wiz-cal-nav" id="cal-prev" onclick="wizCalPrev()">&#8249;</button>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <span id="cal-month-label" onclick="wizShowMonthPicker()" style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:22px;color:#f5f0e8;cursor:pointer;letter-spacing:0.03em;border-bottom:1px solid transparent;transition:border-color 0.2s;padding-bottom:1px;" onmouseover="this.style.borderColor='rgba(200,169,106,0.4)'" onmouseout="this.style.borderColor='transparent'"></span>
+                    <span id="cal-year-label" onclick="wizShowYearPicker()" style="font-family:'Cormorant Garamond',serif;font-weight:200;font-size:22px;color:rgba(200,169,106,0.8);cursor:pointer;letter-spacing:0.03em;border-bottom:1px solid transparent;transition:border-color 0.2s;padding-bottom:1px;" onmouseover="this.style.borderColor='rgba(200,169,106,0.4)'" onmouseout="this.style.borderColor='transparent'"></span>
+                  </div>
+                  <button class="wiz-cal-nav" id="cal-next" onclick="wizCalNext()">&#8250;</button>
+                </div>
+                <div id="wizCalPicker" style="display:none;opacity:0;transition:opacity 0.2s ease;"></div>
+                <div class="wiz-cal-days-header">
+                  <span data-i18n="cal.dayMo">Po</span><span data-i18n="cal.dayTu">Út</span><span data-i18n="cal.dayWe">St</span><span data-i18n="cal.dayTh">Čt</span><span data-i18n="cal.dayFr">Pá</span><span data-i18n="cal.daySa">So</span><span data-i18n="cal.daySu">Ne</span>
+                </div>
+                <div class="wiz-cal-grid" id="wizCalGrid"></div>
+              </div>
+            </div>
+          </div>
+          <div class="wiz-field">
+            <label class="wiz-label" data-i18n="wizard.modal.fieldNote">Poznámka (nepovinné)</label>
+            <textarea class="wiz-input wiz-textarea" id="wizNote" placeholder="Cokoliv chcete dodat..." data-i18n-placeholder="wizard.modal.notePlaceholder"></textarea>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;">
+            <input type="checkbox" id="gdpr-consent" onchange="var btn=document.getElementById('wiz-send-btn');btn.disabled=!this.checked;btn.style.opacity=this.checked?'1':'0.4';btn.style.cursor=this.checked?'pointer':'not-allowed';">
+            <label for="gdpr-consent" style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.4);line-height:1.7;cursor:pointer;" data-i18n-html="wizard.modal.gdprFull">Kliknutím souhlasíte se zpracováním osobních údajů dle <span onclick="document.getElementById('privacy-modal').classList.add('open');_lockScroll();" style="color:#C8A96A;text-decoration:underline;cursor:pointer;">Zásad ochrany osobních údajů</span>.</label>
+          </div>
+          <button id="wiz-send-btn" class="wiz-modal-send" onclick="wizSend()" disabled style="opacity:0.4;cursor:not-allowed;" data-i18n="wizard.modal.sendBtn">Odeslat poptávku →</button>
+        </div>
+        <div class="wiz-modal-success" id="wizSuccess" style="display:none;">
+          <div class="wiz-success-ring"><div class="wiz-success-check">✓</div></div>
+          <div class="wiz-success-title" data-i18n="wizard.modal.successTitle">Děkujeme!</div>
+          <div class="wiz-success-sub" data-i18n-html="wizard.modal.successSub">Vaše poptávka byla odeslána.<br>Ozveme se vám do 24 hodin.</div>
+          <button class="wiz-success-close" onclick="wizCloseModal()" data-i18n="wizard.modal.successClose">Zavřít okno</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="brand-f">
+    <div class="w">THE BAR<span class="dot">.</span></div>
+    <p data-i18n="footer.tagline">Premium cocktail catering napříč Českou republikou. Autorské koktejly, mobilní bary, zážitky na míru.</p>
+  </div>
+  <div class="col">
+    <h4 data-i18n="footer.col1.heading">Služby</h4>
+    <ul>
+      <li><a href="#services" onclick="event.preventDefault();scrollToWizard()" data-i18n="footer.col1.link1">Firemní akce</a></li>
+      <li><a href="#services" onclick="event.preventDefault();scrollToWizard()" data-i18n="footer.col1.link2">Svatby</a></li>
+      <li><a href="#services" onclick="event.preventDefault();scrollToWizard()" data-i18n="footer.col1.link3">Privátní oslavy</a></li>
+      <li><a href="#addons" data-i18n="footer.col1.link4">MasterClass</a></li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4 data-i18n="footer.col2.heading">Spojte se</h4>
+    <ul>
+      <li><a href="https://www.instagram.com/thebar.catering/" target="_blank" rel="noopener noreferrer" data-i18n="footer.col2.link1">Instagram</a></li>
+      <li><a href="https://www.facebook.com/share/14eMGkatPaf/" target="_blank" rel="noopener noreferrer" data-i18n="footer.col2.link2">Facebook</a></li>
+      <li><a href="https://www.tiktok.com/@thebar.catering" target="_blank" rel="noopener noreferrer" data-i18n="footer.col2.link3">TikTok</a></li>
+      <li><a href="#contact" onclick="event.preventDefault();scrollToKontakt()" data-i18n="footer.col2.link4">Kontakt</a></li>
+    </ul>
+  </div>
+  <div class="copyr">
+    <span data-i18n="footer.copyr1">© 2025—2026 THE BAR. / Česká republika</span>
+    <span data-i18n="footer.copyr2">Crafted with precision — IČO 23284111</span>
+    <a href="#" onclick="document.getElementById('privacy-modal').classList.add('open');_lockScroll();return false;" style="font-family:var(--mono,monospace);font-size:10px;letter-spacing:.12em;color:rgba(200,169,106,0.5);text-transform:uppercase;text-decoration:none;cursor:pointer;" data-i18n="footer.privacy">Zásady ochrany osobních údajů</a>
+  </div>
+</footer>
+
+<!-- TWEAKS -->
+<div class="tweaks" id="tweaks">
+  <h5>Tweaks</h5>
+  <label>Ember count <input id="tw-count" type="range" min="0" max="200" value="80"></label>
+  <label>Ember drift <input id="tw-drift" type="range" min="0" max="3" step=".1" value="1"></label>
+  <label>Gold <input id="tw-gold" type="color" value="#C8A96A"></label>
+  <label>Background <input id="tw-bg" type="color" value="#0D1117"></label>
+  <label>Hero style
+    <select id="tw-style">
+      <option value="outline">Outline italic</option>
+      <option value="solid" selected="">Solid serif</option>
+      <option value="split">Split mirror</option>
+    </select>
+  </label>
+</div>
+
+
+
+
+
+  
+
+  
+
+
+
+
+<!-- PRIVACY POLICY MODAL -->
+
+<div id="privacy-modal" role="dialog" aria-modal="true" aria-label="Zásady ochrany osobních údajů" onclick="if(event.target===this){this.classList.remove('open');_unlockScroll();}">
+  <button class="pm-close" onclick="document.getElementById('privacy-modal').classList.remove('open');_unlockScroll();" aria-label="Zavřít">×</button>
+  <div class="pm-inner">
+    <h2 data-i18n="privacy.heading">Zásady ochrany osobních&nbsp;údajů</h2>
+    <div class="pm-body">
+      <p class="pm-provoz" data-i18n-html="privacy.provoz">Provozovatel: <strong style="color:rgba(245,240,232,0.85);">Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING</strong>, IČO:&nbsp;23284111</p>
+      <h3 data-i18n="privacy.h1">1. Jaké údaje shromažďujeme</h3>
+      <p data-i18n="privacy.p1">Jméno a příjmení · Telefonní číslo · E-mailová adresa · Datum plánované akce · Vybraná služba</p>
+      <h3 data-i18n="privacy.h2">2. Za jakým účelem</h3>
+      <p data-i18n="privacy.p2">Vytvoření nezávazné cenové nabídky · Komunikace ohledně vaší poptávky · Rezervace našich služeb</p>
+      <h3 data-i18n="privacy.h3">3. Kdo má přístup</h3>
+      <p data-i18n="privacy.p3">Pouze provozovatel. Nikdy nepředáváme třetím stranám bez vašeho souhlasu.</p>
+      <h3 data-i18n="privacy.h4">4. Jak dlouho uchováváme</h3>
+      <p data-i18n="privacy.p4">Maximálně 12 měsíců od přijetí poptávky.</p>
+      <h3 data-i18n="privacy.h5">5. Vaše práva</h3>
+      <p data-i18n="privacy.p5">Máte právo na přístup k údajům, jejich opravu, výmaz, vznesení námitky a podání stížnosti u Úřadu pro ochranu osobních údajů (ÚOOÚ).</p>
+    </div>
+  </div>
+</div>
+
+  <script>
+    (function() {
+      function goToSlide(card, index) {
+        var slides = card.querySelectorAll('.bento-card-slide');
+        var dots = card.querySelectorAll('.bento-dot');
+        var total = slides.length;
+        if (!total) return;
+        index = ((index % total) + total) % total;
+        card.dataset.current = index;
+        slides.forEach(function(s, i) {
+          s.classList.toggle('active', i === index);
+          if (i === index) {
+            var img = s.querySelector('img');
+            if (img) {
+              img.style.animation = 'none';
+              void img.offsetWidth;
+              img.style.animation = '';
+            }
+          }
+        });
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+      }
+
+      function pauseManual(card) {
+        card._manualPaused = true;
+        clearTimeout(card._pauseTimer);
+        card._pauseTimer = setTimeout(function() { card._manualPaused = false; }, 8000);
+      }
+
+      window.carouselNext = function(btn) {
+        var card = btn.closest('.bento-card');
+        pauseManual(card);
+        goToSlide(card, parseInt(card.dataset.current || 0) + 1);
+      };
+
+      window.carouselPrev = function(btn) {
+        var card = btn.closest('.bento-card');
+        pauseManual(card);
+        goToSlide(card, parseInt(card.dataset.current || 0) - 1);
+      };
+
+      var stagger = 0;
+      document.querySelectorAll('.bento-card').forEach(function(card) {
+        card._hoverPaused = false;
+        card._manualPaused = false;
+        card.addEventListener('mouseenter', function() { card._hoverPaused = true; });
+        card.addEventListener('mouseleave', function() { card._hoverPaused = false; });
+        var bannerParent = card.closest('.bento-banner-right');
+        if (bannerParent) {
+          bannerParent.addEventListener('mouseenter', function() { card._hoverPaused = true; });
+          bannerParent.addEventListener('mouseleave', function() { card._hoverPaused = false; });
+        }
+        goToSlide(card, 0);
+        card.querySelectorAll('.bento-dot').forEach(function(dot, i) {
+          dot.addEventListener('click', function() {
+            pauseManual(card);
+            goToSlide(card, i);
+          });
+        });
+        var autoInterval = card.closest('.bento-banner-right') ? 3200 : 4000;
+        setTimeout(function() {
+          setInterval(function() {
+            if (!card._hoverPaused && !card._manualPaused) {
+              goToSlide(card, parseInt(card.dataset.current || 0) + 1);
+            }
+          }, autoInterval);
+        }, stagger);
+        stagger += 800;
+      });
+    })();
+  </script>
+  <script src="translations.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

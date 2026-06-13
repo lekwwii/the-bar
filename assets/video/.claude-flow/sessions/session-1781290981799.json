@@ -1,0 +1,14 @@
+{
+  "id": "session-1781290981799",
+  "startedAt": "2026-06-12T19:03:01.799Z",
+  "cwd": "/Users/vladyslav/Desktop/WEB/taste-skill-main/the-bar/assets/video",
+  "context": {},
+  "metrics": {
+    "edits": 30,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-06-12T19:18:05.317Z",
+  "duration": 903519
+}
