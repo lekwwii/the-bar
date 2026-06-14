@@ -646,14 +646,14 @@
   /* -------- HERO -------- */
   .hero{position:relative;width:100%;min-height:100svh;min-height:100svh;background:#080b10;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:default}
   .hero-video{position:absolute;inset:0;width:100%;height:100%;min-width:100%;min-height:100%;object-fit:cover !important;object-position:center center;z-index:0;pointer-events:none}
-  .hero-overlay-base{position:absolute;inset:0;z-index:1;background:rgba(8,11,16,0.55);pointer-events:none}
+  .hero-overlay-base{position:absolute;inset:0;z-index:1;background:rgba(8,11,16,0.68);pointer-events:none}
   .hero-overlay-focus{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 70% 55% at 50% 48%,rgba(8,11,16,0.75) 0%,rgba(8,11,16,0.45) 55%,rgba(8,11,16,0.2) 100%);pointer-events:none}
   .hero-content{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 40px;box-sizing:border-box}
-  .hero-pre{font-family:'Inter',sans-serif;font-size:10px;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;color:rgba(200,169,106,0.55);margin-bottom:28px;text-align:center;width:100%;padding-left:0;text-shadow:0 2px 16px rgba(0,0,0,0.8)}
+  .hero-pre{font-family:'Inter',sans-serif;font-size:10px;font-weight:200;letter-spacing:0.4em;text-transform:uppercase;color:rgba(200,169,106,0.85);margin-bottom:28px;text-align:center;width:100%;padding-left:0;text-shadow:0 2px 20px rgba(0,0,0,0.95),0 0 40px rgba(0,0,0,0.7)}
   .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(80px,14vw,160px);font-weight:200;color:#f5f0e8;line-height:1;text-align:center;letter-spacing:0;width:100%;padding:0;padding-left:1.5%;box-sizing:border-box;text-shadow:0 2px 30px rgba(0,0,0,0.85),0 0 60px rgba(0,0,0,0.5)}
   .hero-dot{color:#C8A96A}
   .hero-divider{width:0.5px;height:52px;background:linear-gradient(to bottom,transparent,rgba(200,169,106,0.45),transparent);margin:24px auto;margin-left:auto;margin-right:auto;display:block;transform:scaleY(0);transform-origin:center;transition:transform 1.2s ease 1.1s;align-self:center;will-change:transform}
-  .hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,1.8vw,20px);font-weight:200;font-style:italic;color:rgba(245,240,232,0.5);letter-spacing:0.02em;text-align:center;width:100%;text-shadow:0 2px 16px rgba(0,0,0,0.85)}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(14px,1.8vw,20px);font-weight:200;font-style:italic;color:rgba(245,240,232,0.78);letter-spacing:0.02em;text-align:center;width:100%;text-shadow:0 2px 20px rgba(0,0,0,0.95)}
   .hero-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;margin-top:48px;width:100%}
   .hero-btn{font-family:'Inter',sans-serif;font-size:11px;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:#f5f0e8;background:transparent;border:0.5px solid rgba(200,169,106,0.65);padding:16px 44px;cursor:pointer;position:relative;overflow:hidden;transition:color 0.4s,border-color 0.4s;text-shadow:0 2px 14px rgba(0,0,0,0.85)}
   .hero-btn::before{content:'';position:absolute;inset:0;background:#C8A96A;transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.76,0,0.24,1);z-index:0}
@@ -952,7 +952,7 @@
     input,textarea,select{font-size:16px !important}
 
     /* Fix 2: cinematic phrases — prevent 3-line wrap on mobile */
-    .cin-phrase{font-size:clamp(22px,6.5vw,36px);padding:0 20px;line-height:1.35}
+    .cin-phrase{font-size:clamp(28px,8vw,44px);padding:0 20px;line-height:1.35}
 
     /* Fix 3 & 4 related: addons section contains negative-margin children */
     .addons-block{overflow-x:hidden}
