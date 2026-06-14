@@ -3,7 +3,7 @@ if (window.location.hash) history.replaceState(null, '', location.pathname + loc
 window.scrollTo(0, 0);
 window.addEventListener('load', function(){ window.scrollTo(0, 0); });
 
-// iOS Safari: body overflow:hidden doesn't prevent scroll — use position:fixed technique instead
+// iOS Safari: position:fixed technique — overflow:hidden alone doesn't prevent scroll there
 function _lockScroll(){
   if(document.body.dataset.scrollLock) return;
   var y = window.scrollY || window.pageYOffset || 0;
@@ -13,16 +13,25 @@ function _lockScroll(){
   document.body.style.left = '0';
   document.body.style.right = '0';
   document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
 }
 function _unlockScroll(){
-  var y = parseInt(document.body.dataset.scrollLock || '0', 10);
+  if(!document.body.dataset.scrollLock) return;
+  var y = parseInt(document.body.dataset.scrollLock, 10);
   delete document.body.dataset.scrollLock;
+  // html{scroll-behavior:smooth} would animate 0→y, causing a visible flash.
+  // Override to 'auto' for this instant; restore after one frame.
+  var html = document.documentElement;
+  var prevBehavior = html.style.scrollBehavior;
+  html.style.scrollBehavior = 'auto';
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.left = '';
   document.body.style.right = '';
   document.body.style.width = '';
+  document.body.style.overflow = '';
   window.scrollTo(0, y);
+  requestAnimationFrame(function(){ html.style.scrollBehavior = prevBehavior || ''; });
 }
 
 function scrollToKontakt(){
