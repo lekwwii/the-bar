@@ -1246,7 +1246,7 @@
   <div class="copyr">
     <span data-i18n="footer.copyr1">© 2025—2026 THE BAR. / Česká republika</span>
     <span data-i18n="footer.copyr2">Crafted with precision — IČO 23284111</span>
-    <a href="javascript:void(0)" onclick="document.getElementById('privacy-modal').classList.add('open');_lockScroll();" style="font-family:var(--mono,monospace);font-size:10px;letter-spacing:.12em;color:rgba(200,169,106,0.5);text-transform:uppercase;text-decoration:none;cursor:pointer;" data-i18n="footer.privacy">Zásady ochrany osobních údajů</a>
+    <a role="button" tabindex="0" onclick="event.preventDefault();document.getElementById('privacy-modal').classList.add('open');_lockScroll();" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();document.getElementById('privacy-modal').classList.add('open');_lockScroll();}" style="font-family:var(--mono,monospace);font-size:10px;letter-spacing:.12em;color:rgba(200,169,106,0.5);text-transform:uppercase;text-decoration:none;cursor:pointer;" data-i18n="footer.privacy">Zásady ochrany osobních údajů</a>
   </div>
 </footer>
 
