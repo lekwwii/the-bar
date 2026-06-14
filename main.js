@@ -4,22 +4,25 @@ window.scrollTo(0, 0);
 window.addEventListener('load', function(){ window.scrollTo(0, 0); });
 
 // iOS Safari: body overflow:hidden doesn't prevent scroll — use position:fixed technique instead
-var _lockScrollY = 0;
-function _lockScroll() {
-  _lockScrollY = window.scrollY;
+function _lockScroll(){
+  if(document.body.dataset.scrollLock) return;
+  var y = window.scrollY || window.pageYOffset || 0;
+  document.body.dataset.scrollLock = String(y);
   document.body.style.position = 'fixed';
-  document.body.style.top = '-' + _lockScrollY + 'px';
+  document.body.style.top = (-y) + 'px';
   document.body.style.left = '0';
   document.body.style.right = '0';
-  document.body.style.overflow = 'hidden';
+  document.body.style.width = '100%';
 }
-function _unlockScroll() {
+function _unlockScroll(){
+  var y = parseInt(document.body.dataset.scrollLock || '0', 10);
+  delete document.body.dataset.scrollLock;
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.left = '';
   document.body.style.right = '';
-  document.body.style.overflow = '';
-  window.scrollTo(0, _lockScrollY);
+  document.body.style.width = '';
+  window.scrollTo(0, y);
 }
 
 function scrollToKontakt(){
