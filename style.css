@@ -1472,7 +1472,7 @@
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:10000;display:none;align-items:center;gap:18px;flex-wrap:wrap;justify-content:space-between;padding:16px 26px;background:rgba(13,17,23,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(200,169,106,0.35);}
 .cookie-banner.show{display:flex;animation:cookieUp .5s ease;}
 .cookie-text{margin:0;flex:1 1 320px;color:#f5f0e8;font-family:'Inter',sans-serif;font-weight:300;font-size:13px;line-height:1.6;opacity:.85;}
-.cookie-text a{color:#C8A96A;text-decoration:underline;}
+.cookie-text a{color:#C8A96A;text-decoration:underline;cursor:pointer;}
 .cookie-actions{display:flex;gap:12px;flex:0 0 auto;}
 .cookie-btn{cursor:pointer;font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.5px;padding:10px 22px;border-radius:8px;transition:all .25s ease;}
 .cookie-btn--ghost{background:transparent;color:#C8A96A;border:1px solid rgba(200,169,106,0.5);}

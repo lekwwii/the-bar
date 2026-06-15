@@ -791,5 +791,7 @@ window.updateFloatLabels = function(lang) {
   }
   document.getElementById('cookie-accept').addEventListener('click',function(){choose(true);});
   document.getElementById('cookie-reject').addEventListener('click',function(){choose(false);});
+  var more=document.getElementById('cookie-more');
+  if(more){ more.addEventListener('click',function(e){ e.preventDefault(); var m=document.getElementById('privacy-modal'); if(m){ m.classList.add('open'); if(typeof _lockScroll==='function'){_lockScroll();} } }); }
   window.openCookieSettings=function(){ try{localStorage.removeItem(KEY);}catch(e){} banner.classList.add('show'); };
 })();
