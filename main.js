@@ -762,6 +762,14 @@ document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEa
 document.querySelectorAll('a[href*="t.me"], a[href*="telegram.me"]').forEach(el =>
   el.addEventListener('click', () => gaEvent('telegram_click', { method: 'telegram' })));
 
+/* ─── Float button labels ─── */
+window.updateFloatLabels = function(lang) {
+  document.querySelectorAll('.float-contacts a').forEach(function(a) {
+    var v = a.getAttribute(lang === 'en' ? 'data-label-en' : 'data-label-cs');
+    if (v) a.setAttribute('data-label', v);
+  });
+};
+
 /* ─── Cookie consent ─── */
 (function(){
   var KEY='thebar_cookie_consent';

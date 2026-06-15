@@ -1481,3 +1481,15 @@
 .cookie-btn--gold:hover{background:#d8bd84;}
 @keyframes cookieUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
 @media (max-width:600px){.cookie-banner{padding:14px 16px;gap:12px;}.cookie-actions{width:100%;}.cookie-btn{flex:1;}}
+.float-contacts{position:fixed;right:26px;bottom:26px;display:flex;flex-direction:column;gap:14px;z-index:9999;}
+.float-contacts a{position:relative;flex:0 0 auto;width:56px;height:56px;min-width:56px;max-width:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(13,17,23,0.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(200,169,106,0.45);box-shadow:0 6px 24px rgba(0,0,0,0.4);color:#C8A96A;transition:transform .25s ease,box-shadow .3s ease,background .3s ease,color .3s ease;}
+.float-contacts a svg{width:26px !important;height:26px !important;flex:0 0 auto;display:block;}
+.float-contacts a:hover{background:#C8A96A;color:#0D1117;transform:translateY(-2px) scale(1.05);box-shadow:0 8px 28px rgba(0,0,0,0.45),0 0 22px rgba(200,169,106,0.35);}
+.float-contacts a::before{content:attr(data-label);position:absolute;right:70px;top:50%;transform:translateY(-50%) translateX(8px);background:rgba(8,11,16,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#C8A96A;border:0.5px solid rgba(200,169,106,0.25);font-family:'Inter',sans-serif;font-weight:300;letter-spacing:.3px;font-size:12.5px;line-height:1;padding:11px 16px;border-radius:10px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.35);opacity:0;pointer-events:none;z-index:1;transition:opacity .2s ease .15s,transform .2s ease .15s;}
+.float-contacts a:hover::before{opacity:1;transform:translateY(-50%) translateX(0);transition:opacity .2s ease 0s,transform .2s ease 0s;}
+@media (max-width:600px){
+  .float-contacts{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));gap:14px;}
+  .float-contacts a{width:54px;height:54px;min-width:54px;max-width:54px;}
+  .float-contacts a svg{width:24px !important;height:24px !important;}
+  .float-contacts a::before{display:none;}
+}

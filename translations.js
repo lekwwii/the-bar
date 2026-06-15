@@ -537,6 +537,7 @@
     var metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', window.t('meta.description'));
     if (typeof window._wizRefreshSummary === 'function') window._wizRefreshSummary();
+    if (typeof window.updateFloatLabels === 'function') window.updateFloatLabels(lang);
   };
 
   // apply on DOMContentLoaded so data-i18n attributes are present
