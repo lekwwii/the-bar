@@ -229,10 +229,12 @@
     'privacy.h2': '2. Za jakým účelem',
     'privacy.p2': 'Vytvoření nezávazné cenové nabídky · Komunikace ohledně vaší poptávky · Rezervace našich služeb',
     'privacy.h3': '3. Kdo má přístup',
-    'privacy.p3': 'Pouze provozovatel. Nikdy nepředáváme třetím stranám bez vašeho souhlasu.',
+    'privacy.p3': 'Pouze provozovatel. K marketingovým účelům údaje nepředáváme; využíváme pouze nezbytné technické zpracovatele (Google – formuláře a analytika, poskytovatel hostingu).',
     'privacy.h4': '4. Jak dlouho uchováváme',
     'privacy.p4': 'Maximálně 12 měsíců od přijetí poptávky.',
-    'privacy.h5': '5. Vaše práva',
+    'privacy.h_cookies': '5. Cookies a analytika',
+    'privacy.p_cookies': 'Web používá službu Google Analytics k anonymní analýze návštěvnosti. Analytické cookies se načítají až po vašem souhlasu v cookie liště; souhlas můžete kdykoli odvolat odkazem „Nastavení cookies" v patičce. Poskytovatelem této služby je společnost Google, která vystupuje jako zpracovatel údajů.',
+    'privacy.h5': '6. Vaše práva',
     'privacy.p5': 'Máte právo na přístup k údajům, jejich opravu, výmaz, vznesení námitky a podání stížnosti u Úřadu pro ochranu osobních údajů (ÚOOÚ).',
 
     // META
@@ -470,10 +472,12 @@
     'privacy.h2': '2. For what purpose',
     'privacy.p2': 'Preparing a non-binding quote · Communicating about your request · Booking our services',
     'privacy.h3': '3. Who has access',
-    'privacy.p3': 'Only the operator. We never share data with third parties without your consent.',
+    'privacy.p3': 'Only the operator. We do not share data for marketing purposes; we use only necessary technical processors (Google – forms and analytics, hosting provider).',
     'privacy.h4': '4. How long we retain it',
     'privacy.p4': 'A maximum of 12 months from receiving your request.',
-    'privacy.h5': '5. Your rights',
+    'privacy.h_cookies': '5. Cookies and analytics',
+    'privacy.p_cookies': 'This site uses Google Analytics for anonymous traffic analysis. Analytics cookies are loaded only after you give consent in the cookie bar; you can withdraw consent at any time via the "Cookie settings" link in the footer. The service is provided by Google, acting as a data processor.',
+    'privacy.h5': '6. Your rights',
     'privacy.p5': 'You have the right to access your data, correct it, erase it, raise an objection, and lodge a complaint with the Office for Personal Data Protection (ÚOOÚ).',
 
     // META

@@ -74,6 +74,7 @@ function submitContactForm(){
     fw.style.border='none'; fw.style.opacity='1';
     fw.innerHTML='<div style="padding:32px 0;"><div style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:34px;color:#f5f0e8;margin-bottom:10px;">'+(window.t?window.t('contact.formSuccess.title'):'Zpráva odeslána.')+'</div><div style="font-size:11px;font-family:\'Inter\',sans-serif;font-weight:300;color:rgba(245,240,232,0.3);letter-spacing:0.05em;">'+(window.t?window.t('contact.formSuccess.sub'):'Ozveme se co nejdříve na váš email.')+'</div></div>';
     btn.style.display='none';
+    gaEvent('generate_lead', { form: 'contact' });
   },350);
 }
 
@@ -553,6 +554,7 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
     var now=new Date();
     var timeStr=now.getDate()+'. '+(now.getMonth()+1)+'. '+now.getFullYear()+' · '+now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
     fetch('https://script.google.com/macros/s/AKfycbyfsOyNA4LC2kmg7OhByz8E1yK7OVQAxChEcCjvyPEd0ftjXmtyePrLvNGbp9-klwYq/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,phone:phone,email:email,date:date,eventType:(window.translations&&window.translations.cs[TYPE_KEY_MAP[wst.typeKey]])||wst.typeKey,guests:wst.guests,duration:wst.hours,addons:addons.join(', '),price:price,note:note})});
+    gaEvent('generate_lead', { form: 'calculator' });
     var overlay=document.getElementById('wizModalOverlay');
     overlay.classList.remove('open');
     _lockScroll();
@@ -747,4 +749,39 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
       if(m&&m.classList.contains('open')){m.classList.remove('open');_unlockScroll();}
     }
   });
+})();
+
+/* ─── GA4 custom events ─── */
+function gaEvent(name, params){ if (typeof gtag === 'function') gtag('event', name, params || {}); }
+document.querySelectorAll('a[href^="tel:"]').forEach(el =>
+  el.addEventListener('click', () => gaEvent('phone_click', { method: 'phone' })));
+document.querySelectorAll('a[href*="instagram.com"]').forEach(el =>
+  el.addEventListener('click', () => gaEvent('instagram_click', { method: 'instagram' })));
+document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(el =>
+  el.addEventListener('click', () => gaEvent('whatsapp_click', { method: 'whatsapp' })));
+document.querySelectorAll('a[href*="t.me"], a[href*="telegram.me"]').forEach(el =>
+  el.addEventListener('click', () => gaEvent('telegram_click', { method: 'telegram' })));
+
+/* ─── Cookie consent ─── */
+(function(){
+  var KEY='thebar_cookie_consent';
+  var banner=document.getElementById('cookie-banner');
+  if(!banner) return;
+  var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
+  if(saved!=='granted' && saved!=='denied'){ banner.classList.add('show'); }
+  function choose(granted){
+    try{ localStorage.setItem(KEY, granted?'granted':'denied'); }catch(e){}
+    if(typeof gtag==='function'){
+      gtag('consent','update',{
+        'ad_storage':granted?'granted':'denied',
+        'ad_user_data':granted?'granted':'denied',
+        'ad_personalization':granted?'granted':'denied',
+        'analytics_storage':granted?'granted':'denied'
+      });
+    }
+    banner.classList.remove('show');
+  }
+  document.getElementById('cookie-accept').addEventListener('click',function(){choose(true);});
+  document.getElementById('cookie-reject').addEventListener('click',function(){choose(false);});
+  window.openCookieSettings=function(){ try{localStorage.removeItem(KEY);}catch(e){} banner.classList.add('show'); };
 })();
