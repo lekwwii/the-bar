@@ -33,15 +33,18 @@ async function boundedText(stream, max, signal) {
     return new TextDecoder('utf-8', {fatal:true}).decode(bytes);
   } finally { signal.removeEventListener('abort', cancel); reader.releaseLock(); }
 }
-function config(env) {
-  // Preview-only candidate: promoting to production requires a separate reviewed change.
-  if (env.LEAD_PREVIEW_BRANCH !== 'codex/measurement-mvp' || env.LEAD_RECORD_TYPE !== 'test' ||
-      typeof env.LEAD_ADAPTER_SECRET !== 'string' || env.LEAD_ADAPTER_SECRET.length < 32 || env.LEAD_ADAPTER_SECRET.length > 256) return null;
+function config(env, production) {
+  const expectedPin = production ? env.APPS_SCRIPT_PRODUCTION_ENDPOINT_SHA256 : env.APPS_SCRIPT_TEST_ENDPOINT_SHA256;
+  if (production ?
+      (env.LEAD_PRODUCTION_ENABLED !== 'true' || env.LEAD_PREVIEW_BRANCH || !['test','real'].includes(env.LEAD_RECORD_TYPE)) :
+      (env.LEAD_PREVIEW_BRANCH !== 'codex/measurement-mvp' || env.LEAD_RECORD_TYPE !== 'test' || env.LEAD_PRODUCTION_ENABLED === 'true')) return null;
+  if (typeof env.LEAD_ADAPTER_SECRET !== 'string' || env.LEAD_ADAPTER_SECRET.length < 32 ||
+      env.LEAD_ADAPTER_SECRET.length > 256 || !/^[a-f0-9]{64}$/.test(expectedPin || '')) return null;
   try {
     const u = new URL(env.APPS_SCRIPT_ENDPOINT);
     if (u.protocol !== 'https:' || u.hostname !== 'script.google.com' || u.port || u.username || u.password ||
         u.search || u.hash || !/^\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(u.pathname)) return null;
-    return u.href;
+    return {url:u.href, pin:expectedPin};
   } catch { return null; }
 }
 async function upstream(endpoint, body, signal, fetcher) {
@@ -72,7 +75,9 @@ async function upstream(endpoint, body, signal, fetcher) {
 export async function handleLead({request, env}, fetcher = fetch, upstreamMs = UPSTREAM_MS, bodyMs = 5000) {
   if (request.method !== 'POST') return response(C.error('METHOD'), 405, {Allow:'POST'});
   const u = new URL(request.url);
-  if (env.LEAD_ALLOWED_ORIGIN !== u.origin || !(/^[a-z0-9-]+\.the-bar-95g\.pages\.dev$/.test(u.hostname) || ['127.0.0.1','localhost'].includes(u.hostname))) return fail('UNAVAILABLE', 503);
+  const production = u.protocol === 'https:' && u.hostname === 'thebarcatering.cz';
+  const preview = /^[a-z0-9-]+\.the-bar-95g\.pages\.dev$/.test(u.hostname) || ['127.0.0.1','localhost'].includes(u.hostname);
+  if (env.LEAD_ALLOWED_ORIGIN !== u.origin || (!production && !preview)) return fail('UNAVAILABLE', 503);
   if (u.pathname !== '/api/lead' || u.search) return fail('VALIDATION', 400);
   const origin = request.headers.get('Origin');
   if (origin !== u.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') return fail('ORIGIN', 403);
@@ -88,18 +93,19 @@ export async function handleLead({request, env}, fetcher = fetch, upstreamMs = U
     if (!C.validRequest(payload)) return fail('VALIDATION', 400);
   } catch (e) { return fail(e.message === 'SIZE' ? 'BODY_SIZE' : 'VALIDATION', e.message === 'SIZE' ? 413 : 400); }
   finally { clearTimeout(bodyTimer); }
-  const endpoint = config(env);
-  if (!endpoint || !/^[a-f0-9]{64}$/.test(env.APPS_SCRIPT_TEST_ENDPOINT_SHA256 || '')) return fail('UNAVAILABLE', 503);
-  const fingerprint = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint))))
+  const endpoint = config(env, production);
+  if (!endpoint) return fail('UNAVAILABLE', 503);
+  const fingerprint = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(endpoint.url))))
     .map(b => b.toString(16).padStart(2, '0')).join('');
-  if (fingerprint !== env.APPS_SCRIPT_TEST_ENDPOINT_SHA256) return fail('UNAVAILABLE', 503);
-  if (payload.fields.name !== 'SYNTHETIC PASS4' || payload.fields.email !== 'synthetic@lead.invalid') return fail('VALIDATION', 400);
+  if (fingerprint !== endpoint.pin) return fail('UNAVAILABLE', 503);
+  if (env.LEAD_RECORD_TYPE === 'test' &&
+      (payload.fields.name !== 'SYNTHETIC PASS4' || payload.fields.email !== 'synthetic@lead.invalid')) return fail('VALIDATION', 400);
   const controller = new AbortController(); let timer;
   const deadline = new Promise((_, reject) => { timer = setTimeout(() => {
     controller.abort(); reject(new Error('TIMEOUT'));
   }, upstreamMs); });
   try {
-    const result = await Promise.race([upstream(endpoint,
+    const result = await Promise.race([upstream(endpoint.url,
       JSON.stringify({adapter_secret:env.LEAD_ADAPTER_SECRET, request:payload}), controller.signal, fetcher), deadline]);
     if (C.validAck(result, payload.submission_key, env.LEAD_RECORD_TYPE)) return response(result);
     if (C.validError(result)) {
