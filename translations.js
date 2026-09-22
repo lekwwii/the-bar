@@ -1,5 +1,6 @@
 (function () {
   var cs = {
+    'lead.cookieSettings': 'Cookies: nastavení / odvolat souhlas',
     // NAV
     'nav.about': 'O nás',
     'nav.cenaNaMiru': 'Cena na míru',
@@ -243,6 +244,7 @@
   };
 
   var en = {
+    'lead.cookieSettings': 'Cookies: settings / withdraw consent',
     // NAV
     'nav.about': 'About',
     'nav.cenaNaMiru': 'Tailored Pricing',

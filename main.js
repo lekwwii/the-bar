@@ -56,6 +56,7 @@ function scrollToAbout(){
   window.scrollTo({top:top,behavior:'smooth'});
 }
 function submitContactForm(){
+  if(document.getElementById('cf-submit').dataset.leadBusy==='true')return;
   var name=document.getElementById('cf-name').value.trim();
   var email=document.getElementById('cf-email').value.trim();
   var message=document.getElementById('cf-message').value.trim();
@@ -65,17 +66,15 @@ function submitContactForm(){
     setTimeout(function(){fw.style.borderColor='rgba(255,255,255,0.08)';},2000);
     return;
   }
-  fetch('https://script.google.com/macros/s/AKfycbyfsOyNA4LC2kmg7OhByz8E1yK7OVQAxChEcCjvyPEd0ftjXmtyePrLvNGbp9-klwYq/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'message',name:name,email:email,message:message})});
+  return LeadForms.submit('contact_message','unknown',{type:'message',name:name,email:email,message:message},document.getElementById('cf-submit'),function(){
   var fw=document.getElementById('contact-form-wrap');
   var btn=document.getElementById('cf-submit');
   fw.style.transition='opacity 0.3s'; fw.style.opacity='0';
   btn.style.transition='opacity 0.3s'; btn.style.opacity='0';
-  setTimeout(function(){
     fw.style.border='none'; fw.style.opacity='1';
     fw.innerHTML='<div style="padding:32px 0;"><div style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:34px;color:#f5f0e8;margin-bottom:10px;">'+(window.t?window.t('contact.formSuccess.title'):'Zpráva odeslána.')+'</div><div style="font-size:11px;font-family:\'Inter\',sans-serif;font-weight:300;color:rgba(245,240,232,0.3);letter-spacing:0.05em;">'+(window.t?window.t('contact.formSuccess.sub'):'Ozveme se co nejdříve na váš email.')+'</div></div>';
     btn.style.display='none';
-    gaEvent('generate_lead', { form: 'contact' });
-  },350);
+  });
 }
 
 /* ─── */
@@ -540,6 +539,8 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
   };
 
   window.wizSend=function(){
+    if(document.getElementById('wiz-send-btn').dataset.leadBusy==='true')return;
+    if(!document.getElementById('gdpr-consent').checked)return;
     var name=document.getElementById('wizName').value.trim();
     var phone=document.getElementById('wizPhone').value.trim();
     var email=document.getElementById('wizEmail').value.trim();
@@ -553,8 +554,8 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
     var u=wst.hours===1?(window.t?window.t('wizard.unit.hodina'):'hodina'):wst.hours<5?(window.t?window.t('wizard.unit.hodiny'):'hodiny'):(window.t?window.t('wizard.unit.hodin'):'hodin');
     var now=new Date();
     var timeStr=now.getDate()+'. '+(now.getMonth()+1)+'. '+now.getFullYear()+' · '+now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
-    fetch('https://script.google.com/macros/s/AKfycbyfsOyNA4LC2kmg7OhByz8E1yK7OVQAxChEcCjvyPEd0ftjXmtyePrLvNGbp9-klwYq/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,phone:phone,email:email,date:date,eventType:(window.translations&&window.translations.cs[TYPE_KEY_MAP[wst.typeKey]])||wst.typeKey,guests:wst.guests,duration:wst.hours,addons:addons.join(', '),price:price,note:note})});
-    gaEvent('generate_lead', { form: 'calculator' });
+    var frozenType=wst.typeKey, frozenGuests=wst.guests, frozenHours=wst.hours;
+    return LeadForms.submit('quote_request',({wedding:'wedding',corporate:'corporate',party:'private'})[wst.typeKey]||'unknown',{name:name,phone:phone,email:email,date:date,eventType:(window.translations&&window.translations.cs[TYPE_KEY_MAP[wst.typeKey]])||wst.typeKey,guests:wst.guests,duration:wst.hours,addons:addons.join(', '),price:price,note:note},document.getElementById('wiz-send-btn'),function(){
     var overlay=document.getElementById('wizModalOverlay');
     overlay.classList.remove('open');
     _lockScroll();
@@ -579,17 +580,17 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
         var section=document.querySelector('.wiz-section');
         if(!section)return;
         var _tc=window.t||function(k){return k;};
-        section.innerHTML='<div id="wiz-confirmation" style="max-width:960px;margin:0 auto;padding:100px 48px;font-family:\'Inter\',sans-serif;opacity:0;transition:opacity 0.8s ease;"><div style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:48px;color:#f5f0e8;line-height:1.1;margin-bottom:14px;">'+_tc('wizard.confirmation.titleHtml')+'</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:18px;height:18px;border-radius:50%;border:1px solid #C8A96A;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#C8A96A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;font-weight:300;letter-spacing:0.2em;color:rgba(200,169,106,0.7);text-transform:uppercase;">'+_tc('wizard.confirmation.sentLabel')+'</span><span id="wiz-confirm-time" style="font-size:11px;font-weight:300;color:rgba(245,240,232,0.2);"></span></div><div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.3);margin-bottom:48px;letter-spacing:0.05em;">'+_tc('wizard.confirmation.followUp')+'</div><div style="height:0.5px;background:rgba(255,255,255,0.07);margin-bottom:40px;"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0;"><div style="padding:24px 40px 24px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelContact')+'</div><div id="wc-name" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 0 24px 40px;border-bottom:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelDate')+'</div><div id="wc-date" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#C8A96A;font-style:italic;"></div></div><div style="padding:24px 40px 24px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelType')+'</div><div id="wc-type" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 0 24px 40px;border-bottom:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelGuestsDuration')+'</div><div id="wc-guests" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 40px 24px 0;border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelTeam')+'</div><div id="wc-team" style="font-size:15px;font-weight:300;color:rgba(245,240,232,0.65);line-height:1.6;"></div></div><div style="padding:24px 0 24px 40px;"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:10px;">'+_tc('wizard.confirmation.labelAddons')+'</div><div id="wc-addons" style="display:flex;flex-wrap:wrap;gap:6px;"></div></div><div style="grid-column:1/-1;padding-top:32px;margin-top:8px;border-top:0.5px solid rgba(255,255,255,0.07);display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;">'+_tc('wizard.confirmation.priceLabel')+'</span><span id="wc-price" style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:52px;color:#f5f0e8;letter-spacing:0.02em;"></span><span style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.2);">'+_tc('wizard.confirmation.finalNote')+'</span></div></div><div style="margin-top:40px;padding-top:32px;border-top:0.5px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;"><div id="wc-note" style="font-size:11px;font-weight:300;color:rgba(245,240,232,0.28);max-width:400px;line-height:1.8;"></div><button onclick="location.reload()" style="font-family:\'Inter\',sans-serif;font-size:10px;font-weight:300;letter-spacing:0.15em;color:rgba(245,240,232,0.3);text-transform:uppercase;cursor:pointer;border:none;background:none;padding:10px 0;transition:color 0.3s;">'+_tc('wizard.confirmation.newRequest')+'</button></div></div>';
+        section.innerHTML='<div id="wiz-confirmation" style="max-width:960px;margin:0 auto;padding:100px 48px;font-family:\'Inter\',sans-serif;opacity:0;transition:opacity 0.8s ease;"><div style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:48px;color:#f5f0e8;line-height:1.1;margin-bottom:14px;">'+_tc('wizard.confirmation.titleHtml')+'</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;"><div style="width:18px;height:18px;border-radius:50%;border:1px solid #C8A96A;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><polyline points="1,4 3,6 7,2" stroke="#C8A96A" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;font-weight:300;letter-spacing:0.2em;color:rgba(200,169,106,0.7);text-transform:uppercase;">'+_tc('wizard.confirmation.sentLabel')+'</span><span id="wiz-confirm-time" style="font-size:11px;font-weight:300;color:rgba(245,240,232,0.2);"></span></div><div style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.3);margin-bottom:48px;letter-spacing:0.05em;">'+_tc('wizard.confirmation.followUp')+'</div><div style="height:0.5px;background:rgba(255,255,255,0.07);margin-bottom:40px;"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0;"><div style="padding:24px 40px 24px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelContact')+'</div><div id="wc-name" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 0 24px 40px;border-bottom:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelDate')+'</div><div id="wc-date" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#C8A96A;font-style:italic;"></div></div><div style="padding:24px 40px 24px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelType')+'</div><div id="wc-type" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 0 24px 40px;border-bottom:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelGuestsDuration')+'</div><div id="wc-guests" style="font-family:\'Cormorant Garamond\',serif;font-weight:300;font-size:24px;color:#f5f0e8;"></div></div><div style="padding:24px 40px 24px 0;border-right:0.5px solid rgba(255,255,255,0.06);"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:8px;">'+_tc('wizard.confirmation.labelTeam')+'</div><div id="wc-team" style="font-size:15px;font-weight:300;color:rgba(245,240,232,0.65);line-height:1.6;"></div></div><div style="padding:24px 0 24px 40px;"><div style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;margin-bottom:10px;">'+_tc('wizard.confirmation.labelAddons')+'</div><div id="wc-addons" style="display:flex;flex-wrap:wrap;gap:6px;"></div></div><div style="grid-column:1/-1;padding-top:32px;margin-top:8px;border-top:0.5px solid rgba(255,255,255,0.07);display:flex;align-items:baseline;gap:20px;flex-wrap:wrap;"><span style="font-size:10px;font-weight:300;letter-spacing:0.18em;color:rgba(245,240,232,0.3);text-transform:uppercase;">'+_tc('wizard.confirmation.priceLabel')+'</span><span id="wc-price" style="font-family:\'Cormorant Garamond\',serif;font-weight:200;font-size:52px;color:#f5f0e8;letter-spacing:0.02em;"></span><span style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.2);">'+_tc('wizard.confirmation.finalNote')+'</span></div></div><div style="margin-top:40px;padding-top:32px;border-top:0.5px solid rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;"><div id="wc-note" style="font-size:11px;font-weight:300;color:rgba(245,240,232,0.28);max-width:400px;line-height:1.8;"></div><button onclick="LeadForms.newRequest(\'quote_request\')" style="font-family:\'Inter\',sans-serif;font-size:10px;font-weight:300;letter-spacing:0.15em;color:rgba(245,240,232,0.3);text-transform:uppercase;cursor:pointer;border:none;background:none;padding:10px 0;transition:color 0.3s;">'+_tc('wizard.confirmation.newRequest')+'</button></div></div>';
         document.getElementById('wiz-confirm-time').textContent=timeStr;
         document.getElementById('wc-name').textContent=name;
         document.getElementById('wc-date').textContent=date;
-        document.getElementById('wc-type').textContent=_tc(TYPE_KEY_MAP[wst.typeKey]||'wizard.eventLabel.wedding');
-        document.getElementById('wc-guests').textContent=wst.guests+' '+_tc('wizard.unit.hostu')+_tc('wizard.confirmation.guestsSep')+wst.hours+' '+u;
+        document.getElementById('wc-type').textContent=_tc(TYPE_KEY_MAP[frozenType]||'wizard.eventLabel.wedding');
+        document.getElementById('wc-guests').textContent=frozenGuests+' '+_tc('wizard.unit.hostu')+_tc('wizard.confirmation.guestsSep')+frozenHours+' '+u;
         document.getElementById('wc-team').textContent=team;
         var addonsEl=document.getElementById('wc-addons');
         if(addonsDisplay.length){addonsDisplay.forEach(function(a){var sp=document.createElement('span');sp.style.cssText='font-size:10px;font-weight:300;color:rgba(200,169,106,0.7);border:0.5px solid rgba(200,169,106,0.25);padding:4px 12px;letter-spacing:0.08em;';sp.textContent=a;addonsEl.appendChild(sp);});}else{addonsEl.innerHTML='<span style="color:rgba(245,240,232,0.25);">\u2014</span>';}
         document.getElementById('wc-price').textContent=price;
-        document.getElementById('wc-note').innerHTML=_tc('wizard.confirmation.notePrefix')+' <span style="color:rgba(200,169,106,0.6);">'+email+'<\/span>'+_tc('wizard.confirmation.noteSuffix');
+        document.getElementById('wc-note').textContent=_tc('wizard.confirmation.notePrefix')+' '+email+_tc('wizard.confirmation.noteSuffix');
         scrollToWizard();
         setTimeout(function(){
           var conf=document.getElementById('wiz-confirmation');
@@ -597,6 +598,7 @@ window.parent.postMessage({type:'__edit_mode_available'},'*');
         },400);
       },500);
     },2500);
+    });
   };
 })();
 
@@ -778,6 +780,7 @@ window.updateFloatLabels = function(lang) {
   var saved=null; try{ saved=localStorage.getItem(KEY); }catch(e){}
   if(saved!=='granted' && saved!=='denied'){ banner.classList.add('show'); }
   function choose(granted){
+    if(window.LeadForms)LeadForms.setConsent(granted);
     try{ localStorage.setItem(KEY, granted?'granted':'denied'); }catch(e){}
     if(typeof gtag==='function'){
       gtag('consent','update',{
@@ -793,5 +796,5 @@ window.updateFloatLabels = function(lang) {
   document.getElementById('cookie-reject').addEventListener('click',function(){choose(false);});
   var more=document.getElementById('cookie-more');
   if(more){ more.addEventListener('click',function(e){ e.preventDefault(); var m=document.getElementById('privacy-modal'); if(m){ m.classList.add('open'); if(typeof _lockScroll==='function'){_lockScroll();} } }); }
-  window.openCookieSettings=function(){ try{localStorage.removeItem(KEY);}catch(e){} banner.classList.add('show'); };
+  window.openCookieSettings=function(){ choose(false); banner.classList.add('show'); };
 })();

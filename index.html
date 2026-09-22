@@ -22,11 +22,16 @@
     }
   } catch(e){}
 </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WQKJ3ZVLW"></script>
+<!-- Production analytics is excluded on every preview/local hostname. -->
 <script>
-  gtag('js', new Date());
-  gtag('config', 'G-3WQKJ3ZVLW');
+  if (location.hostname === 'thebarcatering.cz') {
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-3WQKJ3ZVLW';
+    document.head.appendChild(tag);
+    gtag('js', new Date());
+    gtag('config', 'G-3WQKJ3ZVLW');
+  }
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -1432,7 +1437,10 @@
       });
     })();
   </script>
+  <button type="button" id="lead-cookie-settings" onclick="openCookieSettings()" style="display:block;margin:16px auto;padding:12px;background:#0D1117;color:#f5f0e8;border:1px solid #C8A96A;" data-i18n="lead.cookieSettings">Cookies: nastavení / odvolat souhlas</button>
   <script src="translations.js" defer></script>
+  <script src="lead-contract.js" defer></script>
+  <script src="lead-submit.js" defer></script>
   <script src="main.js" defer></script>
 
 <div class="float-contacts" aria-label="Rychlý kontakt">
