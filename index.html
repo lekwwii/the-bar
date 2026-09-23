@@ -22,16 +22,11 @@
     }
   } catch(e){}
 </script>
-<!-- Production analytics is excluded on every preview/local hostname. -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WQKJ3ZVLW"></script>
 <script>
-  if (location.hostname === 'thebarcatering.cz') {
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-3WQKJ3ZVLW';
-    document.head.appendChild(tag);
-    gtag('js', new Date());
-    gtag('config', 'G-3WQKJ3ZVLW');
-  }
+  gtag('js', new Date());
+  gtag('config', 'G-3WQKJ3ZVLW');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -63,6 +58,7 @@
 <link rel="canonical" href="https://thebarcatering.cz/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="dns-prefetch" href="https://script.google.com">
 <link rel="preload" as="image" href="assets/video/hero-poster.jpg" fetchpriority="high">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/39b6aa6e-d81d-483c-8eed-6ac0f09dd3b1.woff2">
 <script type="application/ld+json">
@@ -1436,10 +1432,7 @@
       });
     })();
   </script>
-  <button type="button" id="lead-cookie-settings" onclick="openCookieSettings()" style="display:block;margin:16px auto;padding:12px;background:#0D1117;color:#f5f0e8;border:1px solid #C8A96A;" data-i18n="lead.cookieSettings">Cookies: nastavení / odvolat souhlas</button>
   <script src="translations.js" defer></script>
-  <script src="lead-contract.js" defer></script>
-  <script src="lead-submit.js" defer></script>
   <script src="main.js" defer></script>
 
 <div class="float-contacts" aria-label="Rychlý kontakt">
