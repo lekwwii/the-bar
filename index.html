@@ -1264,7 +1264,7 @@
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:24px;">
             <input type="checkbox" id="gdpr-consent" onchange="var btn=document.getElementById('wiz-send-btn');btn.disabled=!this.checked;btn.style.opacity=this.checked?'1':'0.4';btn.style.cursor=this.checked?'pointer':'not-allowed';">
-            <label for="gdpr-consent" style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.4);line-height:1.7;cursor:pointer;" data-i18n-html="wizard.modal.gdprFull">Kliknutím souhlasíte se zpracováním osobních údajů dle <span onclick="document.getElementById('privacy-modal').classList.add('open');_lockScroll();" style="color:#C8A96A;text-decoration:underline;cursor:pointer;">Zásad ochrany osobních údajů</span>.</label>
+            <label for="gdpr-consent" style="font-size:12px;font-weight:300;color:rgba(245,240,232,0.4);line-height:1.7;cursor:pointer;" data-i18n-html="wizard.modal.gdprFull">Potvrzuji, že jsem se seznámil/a se <span onclick="document.getElementById('privacy-modal').classList.add('open');_lockScroll();" style="color:#C8A96A;text-decoration:underline;cursor:pointer;">Zásadami ochrany osobních údajů</span>.</label>
           </div>
           <button id="wiz-send-btn" class="wiz-modal-send" onclick="wizSend()" disabled style="opacity:0.4;cursor:not-allowed;" data-i18n="wizard.modal.sendBtn">Odeslat poptávku →</button>
         </div>
@@ -1345,18 +1345,25 @@
     <h2 data-i18n="privacy.heading">Zásady ochrany osobních&nbsp;údajů</h2>
     <div class="pm-body">
       <p class="pm-provoz" data-i18n-html="privacy.provoz">Provozovatel: <strong style="color:rgba(245,240,232,0.85);">Vladyslav Breslavskyi – THE BAR. PREMIUM COCKTAIL CATERING</strong>, IČO:&nbsp;23284111</p>
+      <p><a href="/zasady-ochrany-osobnich-udaju/" style="color:#C8A96A;text-decoration:underline;" data-i18n="privacy.link">Otevřít zásady na samostatné stránce</a></p>
       <h3 data-i18n="privacy.h1">1. Jaké údaje shromažďujeme</h3>
-      <p data-i18n="privacy.p1">Jméno a příjmení · Telefonní číslo · E-mailová adresa · Datum plánované akce · Vybraná služba</p>
+      <p data-i18n="privacy.p1">Podle použitého formuláře zpracováváme jméno a příjmení, telefonní číslo, e-mailovou adresu, datum nebo přibližný termín akce, vybranou službu, typ akce, očekávaný počet hostů, přibližný rozpočet a město či místo konání. Webová poptávka může obsahovat také délku akce, zvolené doplňky, orientační cenu a poznámku; kontaktní formulář obsah vaší zprávy.</p>
+      <p data-i18n="privacy.p_source">Údaje získáváme přímo od vás prostřednictvím formulářů na našem webu nebo Meta Instant Forms na Facebooku a Instagramu. Poskytnutí údajů je dobrovolné; bez potřebných kontaktních údajů a informací o akci nemusíme být schopni poptávku vyřídit.</p>
+      <p data-i18n="privacy.p_meta">Meta Instant Form vyplňujete a odesíláte v prostředí Meta, které se podílí na přijetí poptávky před předáním údajů THE BAR. Po předání THE BAR poptávku ručně zpracuje a přenese do svého stávajícího CRM pro evidenci a vyřízení. Zpracování údajů v prostředí Facebooku a Instagramu se řídí také zásadami ochrany soukromí těchto služeb.</p>
       <h3 data-i18n="privacy.h2">2. Za jakým účelem</h3>
-      <p data-i18n="privacy.p2">Vytvoření nezávazné cenové nabídky · Komunikace ohledně vaší poptávky · Rezervace našich služeb</p>
+      <p data-i18n="privacy.p2">Údaje používáme pouze k vyřízení konkrétní poptávky: k odpovědi, ověření termínu, dostupnosti a rozsahu akce, přípravě nezávazné nabídky, navazující komunikaci a případné rezervaci, uzavření smlouvy a poskytnutí služby.</p>
+      <p data-i18n="privacy.p_notice">Odeslání formuláře není rezervací ani potvrzením termínu a nepředstavuje závaznou cenovou nabídku. Nejde o přihlášení k newsletteru; toto zpracování nezahrnuje zasílání přímých marketingových sdělení.</p>
+      <h3 data-i18n="privacy.h_legal">Právní základ zpracování poptávky</h3>
+      <p data-i18n="privacy.p_legal_b">Pokud jste sami zájemcem o službu jako budoucí zákazník, zpracování je nezbytné pro provedení opatření přijatých na vaši žádost před uzavřením smlouvy a případně pro její plnění podle čl. 6 odst. 1 písm. b) GDPR.</p>
+      <p data-i18n="privacy.p_legal_f">Pokud jednáte jako zástupce nebo kontaktní osoba společnosti či jiné organizace, právním základem je čl. 6 odst. 1 písm. f) GDPR: oprávněný zájem THE BAR přijímat a vyřizovat obchodní poptávky, komunikovat se zástupcem a činit kroky k případnému smluvnímu vztahu s danou organizací. Vyřízení poptávky neopíráme o souhlas se zpracováním osobních údajů.</p>
       <h3 data-i18n="privacy.h3">3. Kdo má přístup</h3>
-      <p data-i18n="privacy.p3">Pouze provozovatel. K marketingovým účelům údaje nepředáváme; využíváme pouze nezbytné technické zpracovatele (Google – formuláře a analytika, poskytovatel hostingu).</p>
+      <p data-i18n="privacy.p3">K údajům má přístup provozovatel a nezbytní techničtí poskytovatelé pro příjem a evidenci poptávek a provoz webu (Google – formuláře, stávající evidence/CRM a analytika; poskytovatel hostingu). Údaje nepředáváme dalším subjektům pro jejich marketingové účely. U Meta Instant Forms se na přijetí a předání údajů podílí také prostředí Meta, jak je popsáno výše.</p>
       <h3 data-i18n="privacy.h4">4. Jak dlouho uchováváme</h3>
       <p data-i18n="privacy.p4">Maximálně 12 měsíců od přijetí poptávky.</p>
       <h3 data-i18n="privacy.h_cookies">5. Cookies a analytika</h3>
-      <p data-i18n="privacy.p_cookies">Web používá službu Google Analytics k anonymní analýze návštěvnosti. Analytické cookies se načítají až po vašem souhlasu v cookie liště; souhlas můžete kdykoli odvolat odkazem „Nastavení cookies" v patičce. Poskytovatelem této služby je společnost Google, která vystupuje jako zpracovatel údajů.</p>
+      <p data-i18n="privacy.p_cookies">Hlavní stránka webu používá Google Analytics k analýze návštěvnosti. Používání analytických cookies se řídí vaší volbou v cookie liště. Souhlas můžete odvolat: v nastavení prohlížeče vymažte uložená data tohoto webu, znovu otevřete hlavní stránku a v cookie liště zvolte „Odmítnout“. Poskytovatelem analytické služby je Google.</p>
       <h3 data-i18n="privacy.h5">6. Vaše práva</h3>
-      <p data-i18n="privacy.p5">Máte právo na přístup k údajům, jejich opravu, výmaz, vznesení námitky a podání stížnosti u Úřadu pro ochranu osobních údajů (ÚOOÚ).</p>
+      <p data-i18n="privacy.p5">Za podmínek GDPR máte právo na přístup k údajům, jejich opravu, výmaz, omezení zpracování a přenositelnost. Proti zpracování založenému na oprávněném zájmu můžete vznést námitku. Svá práva můžete uplatnit u provozovatele na thebar.event@gmail.com. Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů (ÚOOÚ).</p>
     </div>
   </div>
 </div>
@@ -1432,7 +1439,7 @@
       });
     })();
   </script>
-  <script src="translations.js" defer></script>
+  <script src="translations.js?v=privacy-20261002" defer></script>
   <script src="main.js?v=3557fc3" defer></script>
 
 <div class="float-contacts" aria-label="Rychlý kontakt">
